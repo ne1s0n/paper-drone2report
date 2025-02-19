@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from PIL import Image 
 from scipy import stats
 from index_functions import GLI
+import index_functions as indf
 
 #%% read arguments from command line
 
@@ -32,6 +33,8 @@ parser.add_argument('-s', '--target_dir', type=str, required=True,
                     help='directory where results are to be stored')
 parser.add_argument('--fname', type=str, required=True,
                     help='name of image file to be read')
+parser.add_argument('--vix', type=str, required=True, default='GLI', 
+                    help='name of vegetation index to use')
 # Parse the argument
 args = parser.parse_args()
 
@@ -39,6 +42,7 @@ args = parser.parse_args()
 print('Base folder is:', args.base_folder)
 print('Outpunt folder is:', args.target_dir)
 print('Name of image file to read is:', args.fname)
+print('Name of selected index is:', args.vix)
 
 channels = ['red','green','blue']
 
@@ -74,18 +78,24 @@ masked_pic = ma.masked_array(pic, mask_tot)
 
 # %% calculating the index
 print("CALCULATE THE INDEX ...")
-gli = GLI(masked_pic, channels)
 
-print(gli.shape)
+current_index_function = getattr(indf, args.vix)
+print(current_index_function)
+# myindex = current_index_function(rb, dataset.get_channels())
+                        
+                        
+ind_vals = current_index_function(masked_pic, channels)
 
-avg_index = round(np.ma.mean(gli),5)
+print(ind_vals.shape)
+
+avg_index = round(np.ma.mean(ind_vals),5)
 print("Average index value is:", avg_index)
 
 # %% index distribution
 
 print("GET INDEX DISTRIBUTION ...")
 
-temp = gli[gli.mask == False]
+temp = ind_vals[ind_vals.mask == False]
 temp = np.ma.getdata(temp)
 
 print("summary stats on index distribution")
