@@ -35,6 +35,8 @@ parser.add_argument('--fname', type=str, required=True,
                     help='name of image file to be read')
 parser.add_argument('--vix', type=str, required=True, default='GLI', 
                     help='name of vegetation index to use')
+parser.add_argument('--chan', type=str, required=False, default= 'red,green,blue', 
+                    help='List of channels to be used')
 # Parse the argument
 args = parser.parse_args()
 
@@ -44,7 +46,11 @@ print('Outpunt folder is:', args.target_dir)
 print('Name of image file to read is:', args.fname)
 print('Name of selected index is:', args.vix)
 
-channels = ['red','green','blue']
+
+channels = args.chan.split()
+channels = [x.strip() for x in channels]
+
+print(channels)
 
 # %% Reading image file
 #base_folder = '/home/filippo/Documents/polyploid_breeding/papers/software_paper/paper-drone2report'
@@ -78,6 +84,7 @@ masked_pic = ma.masked_array(pic, mask_tot)
 
 # %% calculating the index
 print("CALCULATE THE INDEX ...")
+print("The selected index is", args.vix)
 
 current_index_function = getattr(indf, args.vix)
 print(current_index_function)
@@ -94,6 +101,7 @@ print("Average index value is:", avg_index)
 # %% index distribution
 
 print("GET INDEX DISTRIBUTION ...")
+print("The selected index is", args.vix)
 
 temp = ind_vals[ind_vals.mask == False]
 temp = np.ma.getdata(temp)
@@ -104,7 +112,8 @@ print(stats.describe(temp))
 print("quantile distribution of index values")
 print(np.quantile(temp, [0.10,0.25,0.5,0.75,0.8,0.9]))
 
-fpath = os.path.join(args.base_folder, args.target_dir, "index_histogram.png")
+fname = args.vix + '_histogram.png'
+fpath = os.path.join(args.base_folder, args.target_dir, fname)
 
 plt.hist(temp, bins=60)
 plt.savefig(fpath)
