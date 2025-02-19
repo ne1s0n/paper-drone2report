@@ -46,8 +46,8 @@ print('Outpunt folder is:', args.target_dir)
 print('Name of image file to read is:', args.fname)
 print('Name of selected index is:', args.vix)
 
-
-channels = args.chan.split()
+#'red, green, blue'.split()
+channels = args.chan.split(',')
 channels = [x.strip() for x in channels]
 
 print(channels)
