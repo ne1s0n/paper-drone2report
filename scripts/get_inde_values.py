@@ -9,14 +9,16 @@ Created on Tue Jan 28 11:45:53 2025
 #%% Import libraries
 
 import os
+import PIL 
 import argparse
 import numpy as np
 import numpy.ma as ma
 import imageio.v2 as imageio
 import matplotlib.pyplot as plt
 
+from PIL import Image 
+from scipy import stats
 from index_functions import GLI
-
 
 #%% read arguments from command line
 
@@ -83,4 +85,21 @@ print("Average index value is:", avg_index)
 
 print("GET INDEX DISTRIBUTION ...")
 
+temp = gli[gli.mask == False]
+temp = np.ma.getdata(temp)
+
+print("summary stats on index distribution")
+print(stats.describe(temp))
+
+print("quantile distribution of index values")
+print(np.quantile(temp, [0.10,0.25,0.5,0.75,0.8,0.9]))
+
+fpath = os.path.join(args.base_folder, args.target_dir, "index_histogram.png")
+
+plt.hist(temp, bins=60)
+plt.savefig(fpath)
+
+print("Histogram written to ", fpath)
+
+print("END")
 
