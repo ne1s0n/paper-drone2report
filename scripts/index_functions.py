@@ -42,7 +42,7 @@ def GLI(img, channels):
 	) 
 
 def Intensity(img, channels):
-	"""Green leaf index, uses red, green, blue"""
+	"""Pixel intensity across RGB channels"""
 	try:
 		red   = img[:,:,channels.index('red')]
 		green = img[:,:,channels.index('green')]
@@ -70,7 +70,24 @@ def NGRDI(img, channels):
 		(green - red) / 
 		(green + red)
 	) 
-    
+
+
+def ShapeIndex(img, channels):
+	"""Shape Index"""
+	try:
+		red   = img[:,:,channels.index('red')]
+		green = img[:,:,channels.index('green')]
+		blue  = img[:,:,channels.index('blue')]
+	except ValueError:
+		#if this clause is activated it means that the requested channel(s) are not available
+		return np.nan
+	#if we get here the index can be applied to the current image
+	return(
+		(2*red - green - blue) / 
+		(green - blue)
+	)
+
+
 def VARIrgb(img, channels):
     """Visible Atmospherically Resistant Index, uses red, green, blue"""
     try:
