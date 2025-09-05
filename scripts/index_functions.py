@@ -8,7 +8,9 @@ Created on Wed Feb 19 12:54:54 2025
 
 import numpy as np
 
-
+########
+### RGB
+########
 def HUE(img, channels):
 	"""Hue, uses red, green, blue"""
 	try:
@@ -39,7 +41,25 @@ def GLI(img, channels):
 		(2.0*green + red + blue)
 	) 
 
+def VARIrgb(img, channels):
+    """Visible Atmospherically Resistant Index, uses red, green, blue"""
+    try:
+        red   = img[:,:,channels.index('red')]
+        green = img[:,:,channels.index('green')]
+        blue  = img[:,:,channels.index('blue')]
+    except ValueError:
+        #if this clause is activated it means that the requested channel(s) are not available
+        return np.nan
+    #if we get here the index can be applied to the current image
+    return(
+        (green - red) /
+        (green + red - blue)
+    )
 
+
+###################
+### MULTISPECTRAL 
+###################
 def NDVI(img, channels):
 	"""Normalized vegetation index, uses red, NIR"""
 	try:
