@@ -4,4 +4,4 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 ### Data
 
 - [TODO]: description of data
-. [TODO]: prepare clean config.ini files to reproduce the different examples
+- [TODO]: prepare clean config.ini files to reproduce the different examples
