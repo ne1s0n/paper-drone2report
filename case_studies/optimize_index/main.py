@@ -11,7 +11,7 @@
 #For each pixel we have 15 numeric values, from  P1 to P15. The general
 #formula for the family of indexes we are considering is:
 #
-#   sum(Ni * Pi) / sum(Di * Pi)
+#   I(W, P) = sum(Ni * Pi) / sum(Di * Pi)
 #
 #Where Ni is a set of numerator weights, and Di are denominator weights.
 #These are collected globally into the W set.
@@ -30,4 +30,6 @@
 # 5) stop condition? If not, to 1)
 #
 #With Lr is the learning rate.
-#To compute the derivative D
+#To compute the derivative D...
+#
+#To compute the candidaste index I() over the image...
