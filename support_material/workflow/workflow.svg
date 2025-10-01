@@ -254,9 +254,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="432.34529"
-     inkscape:cy="520.22856"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="645.99255"
+     inkscape:cy="258.09397"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -615,7 +615,7 @@
     </g>
     <g
        id="g7996"
-       transform="matrix(1.7510884,0,0,1.7510884,-202.25581,-75.98168)">
+       transform="matrix(2.1628386,0,0,2.1628386,-290.90543,-126.79598)">
       <rect
          y="105.52142"
          x="202.48506"
@@ -640,40 +640,40 @@
       <text
          id="text4738"
          y="113.14932"
-         x="211.08762"
+         x="206.55461"
          style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          xml:space="preserve"><tspan
            style="font-size:1.76389px;stroke-width:0.264583"
            y="113.14932"
-           x="211.08762"
+           x="206.55461"
            id="tspan4736"
-           sodipodi:role="line">G</tspan></text>
+           sodipodi:role="line">GREEN</tspan></text>
       <text
          id="text4738-8"
          y="115.22651"
-         x="213.59976"
+         x="210.27556"
          style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          xml:space="preserve"><tspan
            style="font-size:1.76389px;stroke-width:0.264583"
            y="115.22651"
-           x="213.59976"
+           x="210.27556"
            id="tspan4736-9"
-           sodipodi:role="line">B</tspan></text>
+           sodipodi:role="line">BLUE</tspan></text>
       <text
          id="text4738-7"
          y="110.90063"
-         x="208.98682"
+         x="206.56921"
          style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          xml:space="preserve"><tspan
            style="font-size:1.76389px;stroke-width:0.264583"
            y="110.90063"
-           x="208.98682"
+           x="206.56921"
            id="tspan4736-3"
-           sodipodi:role="line">R</tspan></text>
+           sodipodi:role="line">RED</tspan></text>
     </g>
     <g
        id="g8010"
-       transform="matrix(1.5394457,0,0,1.5394457,-117.50338,-70.21168)">
+       transform="matrix(1.8840878,0,0,1.8840878,-193.26549,-114.19677)">
       <rect
          y="125.64866"
          x="205.00798"
@@ -749,7 +749,7 @@
     </g>
     <g
        id="g8015"
-       transform="matrix(1.869193,0,0,1.869193,-228.68058,-125.96194)">
+       transform="matrix(2.2584398,0,0,2.2584398,-312.42911,-180.23813)">
       <rect
          y="139.565"
          x="202.34103"
@@ -760,18 +760,18 @@
       <text
          id="text4738-7-2"
          y="149.17754"
-         x="207.25526"
+         x="206.12288"
          style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          xml:space="preserve"><tspan
            style="font-size:1.76389px;stroke-width:0.264583"
            y="149.17754"
-           x="207.25526"
+           x="206.12288"
            id="tspan4736-3-0"
-           sodipodi:role="line">Thermal</tspan></text>
+           sodipodi:role="line">THERMAL</tspan></text>
     </g>
     <g
        id="g8026"
-       transform="matrix(1.8941708,0,0,1.8941708,-192.2541,-135.47862)">
+       transform="matrix(1.8941708,0,0,1.8941708,-190.66659,-135.47862)">
       <rect
          y="154.14064"
          x="202.19395"
@@ -1478,10 +1478,10 @@
          id="text5557"
          y="182.91101"
          x="118.11958"
-         style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
          xml:space="preserve"><tspan
            id="tspan5559"
-           style="font-size:14.1111px;line-height:1;text-align:center;text-anchor:middle;stroke-width:0.264583"
+           style="font-size:10.5833px;line-height:1;text-align:center;text-anchor:middle;stroke-width:0.264583"
            y="182.91101"
            x="118.11958"
            sodipodi:role="line">Task list</tspan></text>
@@ -1576,12 +1576,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:0.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="126.06852"
+       x="122.36437"
        y="106.16956"
        id="text8823"><tspan
          sodipodi:role="line"
          id="tspan8821"
-         x="126.06852"
+         x="122.36437"
          y="106.16956"
          style="stroke-width:0.264583">b)</tspan></text>
     <text
