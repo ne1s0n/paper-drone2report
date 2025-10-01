@@ -2,3 +2,6 @@ Repository for code and data used for the software article on [drone2report](htt
 This work is partly supported by the research project [Polyploidbreeding](https://polyploidbreeding.ibba.cnr.it/).
 
 ### Data
+
+- [TODO]: description of data
+- [TODO]: prepare clean config.ini files to reproduce the different examples
