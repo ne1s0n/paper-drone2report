@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    xml:space="preserve"
-   inkscape:export-filename="bitmap.png"
+   inkscape:export-filename="../tobacco.png"
    inkscape:export-xdpi="68.417511"
    inkscape:export-ydpi="68.417511"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
@@ -29,7 +29,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.7500982"
-     inkscape:cx="397.28132"
+     inkscape:cx="75.99005"
      inkscape:cy="561.92643"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
@@ -69,14 +69,14 @@
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,14.199427,-3.2661945)"
          id="text531"
-         style="font-weight:bold;font-size:63.9999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';white-space:pre;shape-inside:url(#rect533);fill:#000000"><tspan
+         style="font-weight:bold;font-size:63.9999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';white-space:pre;shape-inside:url(#rect533);display:inline;fill:#000000"><tspan
            x="-278.6582"
            y="108.80223"
-           id="tspan288">A</tspan></text><text
+           id="tspan425">A</tspan></text><text
          xml:space="preserve"
          transform="matrix(0.26458333,0,0,0.26458333,192.12358,-3.2661945)"
          id="text740"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:63.9999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect742);fill:#000000"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:63.9999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect742);display:inline;fill:#000000"><tspan
            x="-278.6582"
            y="108.80223"
-           id="tspan290">B</tspan></text></g></g></svg>
+           id="tspan427">B</tspan></text></g></g></svg>
