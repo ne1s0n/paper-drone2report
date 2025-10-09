@@ -25,4 +25,6 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 #### Barley field
 
+2. Thresholding: [RGB_barley_field_GLI_thumbnails.ini](case_studies/case-study-1/RGB_barley_field_GLI_thumbnails.ini)
+
 ### Case study n. 2 - monitoring vegetation indices over time
