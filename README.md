@@ -25,6 +25,10 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 #### Barley field
 
+1. Distribution of GLI index values: the same thing we did for the tobacco leaves image, only now we are using s
+   
+`python scripts/get_index_values.py -b </path/to/my/project/folder> -s </path/to/results/folder> --fname data/barley_field/barley_field.tif --vix GLI`
+
 2. Thresholding: [RGB_barley_field_GLI_thumbnails.ini](case_studies/case-study-1/RGB_barley_field_GLI_thumbnails.ini)
 
 ### Case study n. 2 - monitoring vegetation indices over time
