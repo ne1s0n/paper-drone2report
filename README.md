@@ -12,3 +12,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 
 `python scripts/get_index_values.py --base_folder </path/to/my/project/folder> --target_dir </path/to/results/folder> --fname data/tobacco_leaves/tobacco_leaves.tif --vix GLI --chan 'red,green,blue'`
+
+2. Apply threshold to remove background noise and calculate the GLI index only on tobacco leaves:
+
+`python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
