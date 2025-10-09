@@ -5,3 +5,14 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 - [TODO]: description of data
 - [TODO]: prepare clean config.ini files to reproduce the different examples
+
+### Case study n. 1
+
+1. Calculate GLI index values for each pixel of the tobacco leaves RGB image. We use the following `python` script specifying the project folder (`--base_folder`), the target folder for results (`--target_dir`), the name of the image file to be processed (`fname`), the vegetation index that we want to calculate (`--vix`), and the channels in the image (`--chan`): 
+
+
+`python scripts/get_index_values.py --base_folder </path/to/my/project/folder> --target_dir </path/to/results/folder> --fname data/tobacco_leaves/tobacco_leaves.tif --vix GLI --chan 'red,green,blue'`
+
+2. Apply threshold to remove background noise and calculate the GLI index only on tobacco leaves:
+
+`python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
