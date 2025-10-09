@@ -17,4 +17,9 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 `python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
 
+3. Produce a thumbnail of the tobacco leaves image with threshold on GLI > 0.1. You will use `drone2report` (from https://github.com/ne1s0n/drone2report) with the configuration file [RGB_tobacco_leaves_GLI.ini](case_studies/case-study-1/RGB_tobacco_leaves_GLI.ini) 
+
+`python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
+
+
 ### Case study n. 2
