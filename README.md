@@ -6,7 +6,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 - [TODO]: description of data
 - [TODO]: prepare clean config.ini files to reproduce the different examples
 
-### Case study n. 1
+### Case study n. 1 - thresholding
 
 1. Calculate GLI index values for each pixel of the tobacco leaves RGB image. We use the following `python` script specifying the project folder (`--base_folder`), the target folder for results (`--target_dir`), the name of the image file to be processed (`fname`), the vegetation index that we want to calculate (`--vix`), and the channels in the image (`--chan`): 
 
@@ -17,9 +17,9 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 `python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
 
-3. Produce a thumbnail of the tobacco leaves image with threshold on GLI > 0.1. You will use `drone2report` (from https://github.com/ne1s0n/drone2report) with the configuration file [RGB_tobacco_leaves_GLI.ini](case_studies/case-study-1/RGB_tobacco_leaves_GLI.ini) 
+3. Produce a thumbnail of the tobacco leaves image with threshold on GLI > 0.1. Use [drone2report](https://github.com/ne1s0n/drone2report) with the configuration file [RGB_tobacco_leaves_thumbnails.ini](case_studies/case-study-1/RGB_tobacco_leaves_thumbnails.ini) 
 
-`python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_GLI.ini`
+`python drone2report/drone2report.py paper-drone2report/support_material/RGB_tobacco_leaves_thumbnails.ini`
 
 
 ### Case study n. 2
