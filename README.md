@@ -8,4 +8,4 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 ### Case study #1
 
-`python scripts/get_index_values.py -b </path/to/my/project/folder> -s results --fname data/test-data/tobacco3.jpg --vix GLI`
+`python scripts/get_index_values.py --base_folder </path/to/my/project/folder> --target_dir </path/to/results/folder> --fname data/tobacco_leaves/tobacco_leaves.tif --vix GLI`
