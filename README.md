@@ -13,7 +13,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 As input for the case studies illustrated in this article, we used image data on: 
 
 - i) barley field plots from the project [Polyploidbreeding](https://polyploidbreeding.ibba.cnr.it/)
-- ii) tobacco leaves from [GRABSEEDS](https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS) ([Tang et al. 2024](https://plantmethods.biomedcentral.com/articles/10.1186/s13007-024-01268-2)
+- ii) tobacco leaves from [GRABSEEDS](https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS) ([Tang et al. 2024](https://plantmethods.biomedcentral.com/articles/10.1186/s13007-024-01268-2))
 
 ### Case study n. 1 - thresholding
 
