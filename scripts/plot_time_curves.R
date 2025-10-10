@@ -26,7 +26,7 @@ parse_dataset = function(x){
 
 #loading, keeping only useful columns
 df <- readxl::read_xlsx(infile, sheet = 1)
-# df = read.csv(infile, stringsAsFactors = FALSE)
+# df = read.csv(infile, stringsAsFactors = FALSE) ## if you want to read a .csv file instead
 df = df[,c('dataset', 'gid', target_index)]
 
 
