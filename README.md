@@ -5,6 +5,8 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
  1. [Data description](#Data-description)
  2. [Case study n. 1](#case-study-n-1---thresholding)
+ 3. [Case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-time)
+ 4. [Case study n. 3](#case-study-n-3---detecting-lodging-from-DEM-files)
 
 ### Data description
 
@@ -66,4 +68,4 @@ After setting the parameters, you can run the R script from the command line as:
 
 `Rscript scripts/plot_time_curves.R`
 
-### Case study n. 3:
+### Case study n. 3 - detecting lodging from DEM files
