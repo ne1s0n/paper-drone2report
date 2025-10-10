@@ -32,3 +32,11 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 2. Thresholding: we produce thumbnails for the barley field image at different GLI thresholds, and calculate the GLI index using only pixels above each threshold value. We use [drone2report](https://github.com/ne1s0n/drone2report) with the configuration file [RGB_barley_field_GLI_thumbnails.ini](case_studies/case-study-1/RGB_barley_field_GLI_thumbnails.ini) to produce thumbnails and calculate the index values. The thumbnails are produced in one run of the software; to calculate the index values at each threshold, we need to run [drone2report](https://github.com/ne1s0n/drone2report) as many times as there are thresholds (setting the `[TASK thumbnail]` to `False`, to avoid regenerating the thumbnail image files at each iteration): we can do this manually, each time changing the configuration file; or, we can generate the configuration files dynamically using a `python` or `bash` (or any other language) script and an iterative for loop. 
 
 ### Case study n. 2 - monitoring vegetation indices over time
+
+For this case study we use image data from the same barley field as in case study n. 1: however, here we use multiple plots instead of one single plot.
+It is typical, in plant experimental designs (especially in crops), to have one accession (variety, genotype) per plot.
+
+When you have several images from multiple plots, to get vegetation indices using **drone2report** you can either: 
+i) add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once; 
+or ii) iterate over the number of images, automatically (or manually) generating each .ini file, thus running drone2report as many times as there are images.
+
