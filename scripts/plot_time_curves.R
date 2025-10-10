@@ -1,15 +1,17 @@
 #config
-infile = '../data/Fiorenzuola_RGB.csv'
+infile = 'paper-drone2report/data/Fiorenzuola_RGB-GLI-HUE.xlsx'
 target_index = c('GLI_mean', 'HUE_mean')
-outfile = '../results/time_curves.png'
+outfile = 'paper-drone2report/results/time_curves.png'
 number_of_plotted_lines = 20
 highlight_these_lines = c(157, 36)
 
 # LIBRARIES ---------------------------------------------------------------
-library(ggplot2)
-library(ggpubr)
-library(tidyr)
-library(gghighlight)
+library("ggplot2")
+library("ggpubr")
+library("dplyr")
+library("tidyr")
+library("data.table")
+library("gghighlight")
 
 # SUPPORT FUNCTIONS -------------------------------------------------------
 parse_dataset = function(x){
@@ -23,7 +25,8 @@ parse_dataset = function(x){
 # ACTUAL SCRIPT -----------------------------------------------------------
 
 #loading, keeping only useful columns
-df = read.csv(infile, stringsAsFactors = FALSE)
+df <- readxl::read_xlsx(infile, sheet = 1)
+# df = read.csv(infile, stringsAsFactors = FALSE)
 df = df[,c('dataset', 'gid', target_index)]
 
 
