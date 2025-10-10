@@ -3,12 +3,12 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 
 ## Table of Contents
 
- 1. [Data description](#Data)
- 2. [Case study n. 1(#Case study n. 1 - thresholding)
+ 1. [Data description](#Data-description)
+ 2. [Case study n. 1(#Case-study-n.-1---thresholding)
  3. [Subheading 2](#subheading-2)
  4. [Subheading 3](#sub-heading-3)
 
-### Data
+### Data description
 
 - [TODO]: description of data
 - [TODO]: prepare clean config.ini files to reproduce the different examples
