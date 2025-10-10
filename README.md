@@ -53,8 +53,8 @@ You can now parse this file with e.g. the R script [plot_time_curves.R](scripts/
 infile = 'paper-drone2report/data/Fiorenzuola_RGB-GLI-HUE.xlsx'
 target_index = c('GLI_mean', 'HUE_mean')
 outfile = 'paper-drone2report/results/time_curves.png'
-number_of_plotted_lines = 20
-highlight_these_lines = c(157, 36)
+number_of_plotted_lines = 20                                     ## n. of lines to draw
+highlight_these_lines = c(157, 36)                               ## IDs of lines to highlight
 ```
 
 `Rscript scripts/plot_time_curves.R`
