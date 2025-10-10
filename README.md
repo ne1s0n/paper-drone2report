@@ -57,4 +57,8 @@ number_of_plotted_lines = 20                                     ## n. of lines 
 highlight_these_lines = c(157, 36)                               ## IDs of lines to highlight
 ```
 
+After setting the parameters, you can run the R script from the command line as:
+
 `Rscript scripts/plot_time_curves.R`
+
+### Case study n. 3:
