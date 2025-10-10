@@ -4,9 +4,9 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 ## Table of Contents
 
  1. [Data description](#Data-description)
- 2. [Case study n. 1](#case-study-n-1---thresholding)
- 3. [Case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-time)
- 4. [Case study n. 3](#case-study-n-3---detecting-lodging-from-DEM-files)
+ 2. [Case study n. 1: thresholding](#case-study-n-1---thresholding)
+ 3. [Case study n. 2: monitoring vegetation indices over time](#case-study-n-2---monitoring-vegetation-indices-over-time)
+ 4. [Case study n. 3: detecting lodging from DEM files](#case-study-n-3---detecting-lodging-from-DEM-files)
 
 ### Data description
 
