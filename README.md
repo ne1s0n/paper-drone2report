@@ -4,9 +4,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
 ## Table of Contents
 
  1. [Data description](#Data-description)
- 2. [Case study n. 1(#Case-study-n.-1---thresholding)
- 3. [Subheading 2](#subheading-2)
- 4. [Subheading 3](#sub-heading-3)
+ 2. [Case study n. 1(#Case-study-n\\.-1-\\--thresholding)
 
 ### Data description
 
