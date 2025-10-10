@@ -46,4 +46,15 @@ A simple example using the provided .ini file for two input images might run as 
 
 Once you have run `drone2report` to process image data over several successive time points, you will end up with a file like [Fiorenzuola_RGB-GLI-HUE.xlsx](data/Fiorenzuola_RGB-GLI-HUE.xlsx): this is a spreadsheet with average GLI and HUE index values for 264 barley accessions from 10 successive flights over the growing season.
 
-You can now parse this file with e.g. the R script [plot_time_curves.R](scripts/plot_time_curves.R) to obtain average index values for each accession at each flight and then plot these against time
+You can now parse this file with e.g. the R script [plot_time_curves.R](scripts/plot_time_curves.R) to obtain average index values for each accession at each flight and then plot these against time; this is a script with customisable parameters in the heading section:
+
+```r
+#config
+infile = 'paper-drone2report/data/Fiorenzuola_RGB-GLI-HUE.xlsx'
+target_index = c('GLI_mean', 'HUE_mean')
+outfile = 'paper-drone2report/results/time_curves.png'
+number_of_plotted_lines = 20
+highlight_these_lines = c(157, 36)
+```
+
+`Rscript scripts/plot_time_curves.R`
