@@ -80,8 +80,12 @@ to [figshare](https://doi.org/10.6084/m9.figshare.30327727.v2) (`case-study-3/`)
 The configuration file [DEM_barley_field_height.ini](case_studies/case-study-3_DEM_height/DEM_barley_field_height.ini) will instruct **drone2report** 
 to extract the average height for each plot from the DEM file (as sepcified in the shape file: there are 264 plots in the barley field, one per barley accession).
 
-However, to detect lodging (i.e. the reduction of height over time) we need to process the DEM files from multipel successive flights.
-As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-time)
+However, to detect lodging (i.e. the reduction of height over time) we need to process the DEM files from multiple successive flights.
+As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-time), when you need to process multiple image files you can
+either write one single configuration file with many `[DATA]` sections, or generate multiple configuration files, one per file.
+
+Let's assume that you have done it: the end results will be a .csv file with the average height for each plot (barley accession) and each flight (each DEM file)
+([indexes_F_Dem.csv](data/indexes_F_Dem.csv)) 
 
 ### Case study n. 4 - loading multisource data and optimizing an index
 
