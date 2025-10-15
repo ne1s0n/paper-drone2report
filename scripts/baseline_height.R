@@ -26,8 +26,7 @@ if (length(args) >= 1) {
   #as follows
   config = NULL
   config = rbind(config, data.frame(
-    repo = "Documents/polyploid_breeding/polyploidbreeding",
-    prjfolder = "Documents/polyploid_breeding/papers/software_paper/paper-drone2report",
+    prjfolder = "paper-drone2report",
     input_file = "data/barley_field/case-study-3/indexes_F_Dem.csv", ## from drone2report
     outdir = "results",
     pattern = "_dem",
@@ -37,9 +36,8 @@ if (length(args) >= 1) {
 
 ## -- 
 HOME <- Sys.getenv("HOME")
-repo = file.path(HOME, config$repo)
 prjfolder = file.path(HOME, config$prjfolder)
-outdir = file.path(prjfolder,config$analysis_folder, config$outdir)
+outdir = file.path(prjfolder, config$outdir)
 
 ## read data file
 fname = file.path(prjfolder, config$input_file)
@@ -64,5 +62,5 @@ dem <- dem |>
 writeLines(" - writing out normalised height file")
 dem <- dem |> select(-c(baseline_height))
 
-fname = file.path(config$prjfolder, config$outdir, "normalised_height.csv")
+fname = file.path(outdir, "normalised_height.csv")
 fwrite(x = dem, file = fname)
