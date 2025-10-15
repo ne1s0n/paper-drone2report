@@ -85,7 +85,7 @@ As a first step, download the data (three tif images, plus a subfolder with all
 the shape files, which are used to define the ROIs). It's about 4.5 GB of data.
 
 There is only one .ini file accompanying this case study, called
-[multisource_optimize.ini](case-study-4_multisource_optimize_index/multisource_optimize.ini).
+[multisource_optimize.ini](case_studies/case-study-4_multisource_optimize_index/multisource_optimize.ini).
 In its default state it will do nothing (no data load, no task invocation).
 You can start by activating (setting `active=True`) the `[DATA thermal]`
 section. Out of the three images available, the thermal data is the smaller and thus faster to be loaded, ideal for tests.
@@ -97,7 +97,7 @@ In this way drone2report will just load the image. You can thus check if all pat
 - activate the `[DATA RGB_240612]` section, turn off all other `[DATA]` sections
 - activate the `[TASK indexes]`, uncommenting the line that asks for GLI. Keep in mind that if you ask for impossible indices (e.g. NDVI on an RGB image) the output file will contains empty/NA values
 - collect the data under the proper outfolder
-- [optional] you may want to compute the correlation between the computed GLI and the final trait (Heading Date). You find the data in the [Fiorenzuola_phenos.csv](case-study-4_multisource_optimize_index/Fiorenzuola_phenos.csv) file. Match the plot using the `gid` column
+- [optional] you may want to compute the correlation between the computed GLI and the final trait (Heading Date). You find the data in the [Fiorenzuola_phenos.csv](case_studies/case-study-4_multisource_optimize_index/Fiorenzuola_phenos.csv) file. Match the plot using the `gid` column
 
 The above steps should be repeated using the [DATA MULTISPECTRAL_240612] section with NDVI index. If all went well you should produce a correlation of 0.129 (RGB+GLI) and 0.102 (multispectral+NDVI). These values are the baseline, to be improven by the optimization process.
 
@@ -109,9 +109,9 @@ The above steps should be repeated using the [DATA MULTISPECTRAL_240612] section
 
 Once the loading is complete you can do computation on this newly created 14-channels image (3 channels for RGB, 10 channels for multispectral, 1 channel for thermal).
 
-**Optimizing an index** Index optimization is a done using a custom task, which is defined in file [optimize_index.py](case-study-4_multisource_optimize_index/optimize_index.py). By convention, the task is a python class named as the file that defines it. Follow these steps:
+**Optimizing an index** Index optimization is a done using a custom task, which is defined in file [optimize_index.py](case_studies/case-study-4_multisource_optimize_index/optimize_index.py). By convention, the task is a python class named as the file that defines it. Follow these steps:
 
-- copy the [optimize_index.py](case-study-4_multisource_optimize_index/optimize_index.py) into your python installation of drone2report under folder `d2r/tasks`
+- copy the [optimize_index.py](case_studies/case-study-4_multisource_optimize_index/optimize_index.py) into your python installation of drone2report under folder `d2r/tasks`
 - activate `[DATA MULTISOURCE]` section and turn off all other `[DATA]` sections. Alternativel, you could activate only the `[DATA RGB_240612]`, which will run much faster
 - activate the `[TASK optimize_index]`, and de-activate all other `[TASK]`
 - run drone2report. It should say that it starts with a random X0, and it will run for a while (possibly hours, depending on your machine)
