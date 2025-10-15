@@ -93,7 +93,19 @@ either write one single configuration file with many `[DATA]` sections, or gener
 Let's assume that you have done it: the end results will be a .csv file with the average height for each plot (barley accession) and each flight (each DEM file)
 ([indexes_F_Dem.csv](data/indexes_F_Dem.csv)).
 The first step is to normalise the plant height relative to the baseline, i.e. the height measured in the DEM file of the first flight.
-We will use the [baseline_height.R](scripts/baseline_height.R) script:
+We will use the [baseline_height.R](scripts/baseline_height.R) script, after modifying appropriately the configuration parameters (beginning of the script):
+you will need to specify your paths to the .csv file with the average height per plot and flight.
+
+```r
+# config
+  config = rbind(config, data.frame(
+    prjfolder = "paper-drone2report",
+    input_file = "data/barley_field/case-study-3/indexes_F_Dem.csv",
+    outdir = "results",
+    pattern = "_dem", ## suffix of dataset name that follows the date
+    force_overwrite = FALSE
+  ))
+```
 
 ```r
 Rscript scripts/baseline_height.R
