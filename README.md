@@ -71,6 +71,8 @@ After setting the parameters, you can run the R script from the command line as:
 
 `Rscript scripts/plot_time_curves.R`
 
+---
+
 ### Case study n. 3 - detecting lodging from DEM files
 
 For this case study, we use the DEM file (digital elevation model) from the same barley field used in case studies n. 1 and n. 2.
@@ -85,7 +87,10 @@ As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-o
 either write one single configuration file with many `[DATA]` sections, or generate multiple configuration files, one per file.
 
 Let's assume that you have done it: the end results will be a .csv file with the average height for each plot (barley accession) and each flight (each DEM file)
-([indexes_F_Dem.csv](data/indexes_F_Dem.csv)) 
+([indexes_F_Dem.csv](data/indexes_F_Dem.csv)).
+The first step is to normalise the plant height relative to the baseline, i.e. the height measured in the DEM file of the first flight.
+
+---
 
 ### Case study n. 4 - loading multisource data and optimizing an index
 
