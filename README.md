@@ -73,6 +73,9 @@ After setting the parameters, you can run the R script from the command line as:
 
 ### Case study n. 3 - detecting lodging from DEM files
 
+For this case study, we use the DEM file (digital elevation model) from the same barley field in case studies n. 1 and n. 2.
+
+
 
 ### Case study n. 4 - loading multisource data and optimizing an index
 
