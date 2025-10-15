@@ -111,6 +111,9 @@ you will need to specify your paths to the .csv file with the average height per
 Rscript scripts/baseline_height.R
 ```
 
+This will produce the file [normalised_height.csv](results/normalised_height.csv) of normalised height (per flight, per accession), 
+ready to be plotted (Figure 6, B in the paper) using the [plot_index.R](scripts/plot_index.R) script:
+
 ---
 
 ### Case study n. 4 - loading multisource data and optimizing an index
