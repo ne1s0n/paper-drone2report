@@ -16,6 +16,8 @@ As input for the case studies illustrated in this article, we used image data on
 - i) barley field plots from the project [Polyploidbreeding](https://polyploidbreeding.ibba.cnr.it/)
 - ii) tobacco leaves from [GRABSEEDS](https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS) ([Tang et al. 2024](https://plantmethods.biomedcentral.com/articles/10.1186/s13007-024-01268-2))
 
+---
+
 ### Case study n. 1 - thresholding
 
 #### Tobacco leaves
@@ -40,6 +42,8 @@ As input for the case studies illustrated in this article, we used image data on
 `python scripts/get_index_values.py -b </path/to/my/project/folder> -s </path/to/results/folder> --fname data/barley_field/barley_field.tif --vix GLI`
 
 2. Thresholding: we produce thumbnails for the barley field image at different GLI thresholds, and calculate the GLI index using only pixels above each threshold value. We use [drone2report](https://github.com/ne1s0n/drone2report) with the configuration file [RGB_barley_field_GLI_thumbnails.ini](case_studies/case-study-1_thresholding_GLI/RGB_barley_field_GLI_thumbnails.ini) to produce thumbnails and calculate the index values. The thumbnails are produced in one run of the software; to calculate the index values at each threshold, we need to run [drone2report](https://github.com/ne1s0n/drone2report) as many times as there are thresholds (setting the `[TASK thumbnail]` to `False`, to avoid regenerating the thumbnail image files at each iteration): we can do this manually, each time changing the configuration file; or, we can generate the configuration files dynamically using a `python` or `bash` (or any other language) script and an iterative for loop. 
+
+---
 
 ### Case study n. 2 - monitoring vegetation indices over time
 
@@ -71,6 +75,8 @@ After setting the parameters, you can run the R script from the command line as:
 
 `Rscript scripts/plot_time_curves.R`
 
+---
+
 ### Case study n. 3 - detecting lodging from DEM files
 
 For this case study, we use the DEM file (digital elevation model) from the same barley field used in case studies n. 1 and n. 2.
@@ -85,7 +91,15 @@ As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-o
 either write one single configuration file with many `[DATA]` sections, or generate multiple configuration files, one per file.
 
 Let's assume that you have done it: the end results will be a .csv file with the average height for each plot (barley accession) and each flight (each DEM file)
-([indexes_F_Dem.csv](data/indexes_F_Dem.csv)) 
+([indexes_F_Dem.csv](data/indexes_F_Dem.csv)).
+The first step is to normalise the plant height relative to the baseline, i.e. the height measured in the DEM file of the first flight.
+We will use the [baseline_height.R](scripts/baseline_height.R) script:
+
+```r
+Rscript scripts/baseline_height.R
+```
+
+---
 
 ### Case study n. 4 - loading multisource data and optimizing an index
 
