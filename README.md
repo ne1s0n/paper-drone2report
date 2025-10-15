@@ -7,6 +7,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
  2. [Case study n. 1: thresholding](#case-study-n-1---thresholding)
  3. [Case study n. 2: monitoring vegetation indices over time](#case-study-n-2---monitoring-vegetation-indices-over-time)
  4. [Case study n. 3: detecting lodging from DEM files](#case-study-n-3---detecting-lodging-from-DEM-files)
+ 5. [Case study n. 4: loading multisource data, optimize an index](#case-study-n-4---loading-multisource-data,-optimize-an-index)
 
 ### Data description
 
@@ -80,7 +81,7 @@ and thermal. The drone flown over the Fiorenzuola field on June 12, 2024
 (referred with the code 240612).
 
 Given that these are real orthomosaic photos and not small subsets like in
-the other case studies, the data has been uploaded on [figshare](https://doi.org/10.6084/m9.figshare.30327727.v1).
+the other case studies, the data has been uploaded on [figshare](https://doi.org/10.6084/m9.figshare.30327727.v2).
 As a first step, download the data (three tif images, plus a subfolder with all
 the shape files, which are used to define the ROIs). It's about 4.5 GB of data.
 
