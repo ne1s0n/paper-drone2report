@@ -46,7 +46,7 @@ For this case study we use image data from the same barley field as in case stud
 It is typical, in plant experimental designs (especially in crops), to have one accession (variety, genotype) per plot.
 
 When you have several images from multiple plots, to get vegetation indices using **drone2report** you can either: 
-i) add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once (example .ini file for two images: [RGB2_GLI_HUE.ini](case_studies/case-study-2/RGB2_GLI_HUE.ini); 
+i) add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once (example .ini file for two images: [RGB2_GLI_HUE.ini](case_studies/case-study-2_HUE_over_time/RGB2_GLI_HUE.ini); 
 or ii) iterate over the number of images, automatically (or manually) generating each .ini file, thus running drone2report as many times as there are images.
 
 A simple example using the provided .ini file for two input images might run as follows:
