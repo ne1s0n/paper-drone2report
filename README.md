@@ -7,7 +7,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
  2. [Case study n. 1: thresholding](#case-study-n-1---thresholding)
  3. [Case study n. 2: monitoring vegetation indices over time](#case-study-n-2---monitoring-vegetation-indices-over-time)
  4. [Case study n. 3: detecting lodging from DEM files](#case-study-n-3---detecting-lodging-from-DEM-files)
- 5. [Case study n. 4: loading multisource data, optimize an index](#cs4)
+ 5. [Case study n. 4: loading multisource data, optimize an index](#case-study-n-4---loading-multisource-data-and-optimizing-an-index)
 
 ### Data description
 
@@ -74,7 +74,7 @@ After setting the parameters, you can run the R script from the command line as:
 ### Case study n. 3 - detecting lodging from DEM files
 
 
-### Case study n. 4 - loading multisource data, optimize an index{#cs4}
+### Case study n. 4 - loading multisource data and optimizing an index
 
 For this case study, three type of data were available: RGB, multispecral,
 and thermal. The drone flown over the Fiorenzuola field on June 12, 2024
