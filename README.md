@@ -81,7 +81,7 @@ The configuration file [DEM_barley_field_height.ini](case_studies/case-study-3_D
 to extract the average height for each plot from the DEM file (as sepcified in the shape file: there are 264 plots in the barley field, one per barley accession).
 
 However, to detect lodging (i.e. the reduction of height over time) we need to process the DEM files from multipel successive flights.
-As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-tim)
+As we saw in [case study n. 2](#case-study-n-2---monitoring-vegetation-indices-over-time)
 
 ### Case study n. 4 - loading multisource data and optimizing an index
 
