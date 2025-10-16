@@ -111,8 +111,18 @@ you will need to specify your paths to the .csv file with the average height per
 Rscript scripts/baseline_height.R
 ```
 
-This will produce the file [normalised_height.csv](results/normalised_height.csv) of normalised height (per flight, per accession), 
-ready to be plotted (Figure 6, B in the paper) using the [plot_index.R](scripts/plot_index.R) script:
+This will produce the file [normalised_height.csv](results/normalised_height.csv) with normalised heights (per flight, per accession), 
+ready to be plotted (Figure 6, B in the paper) using the [plot_index.R](scripts/plot_index.R) script, after modifying appropriately the configuration parameters (beginning of the script):
+
+```r
+# config
+  config = rbind(config, data.frame(
+    prjfolder = "paper-drone2report",
+    input_file = "data/barley_field/case-study-3/indexes_F_Dem.csv",
+    outdir = "results",
+    pattern = "_dem", ## suffix of dataset name that follows the date
+    force_overwrite = FALSE
+  ))
 
 ---
 
