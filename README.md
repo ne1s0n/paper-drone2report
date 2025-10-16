@@ -117,12 +117,16 @@ ready to be plotted (Figure 6, B in the paper) using the [plot_index.R](scripts/
 ```r
 # config
   config = rbind(config, data.frame(
-    prjfolder = "paper-drone2report",
-    input_file = "data/barley_field/case-study-3/indexes_F_Dem.csv",
+    prjfolder = "paper-drone2repor",
+    analysis_folder = "veg_indexes",
+    input_file = "results/normalised_height.csv",
+    label = "average height (m)",
     outdir = "results",
     pattern = "_dem", ## suffix of dataset name that follows the date
+    index_column = "height_mean",
     force_overwrite = FALSE
   ))
+```
 
 ---
 
