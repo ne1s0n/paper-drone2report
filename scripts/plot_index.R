@@ -29,13 +29,13 @@ if (length(args) >= 1) {
   config = NULL
   config = rbind(config, data.frame(
     repo = "Documents/polyploid_breeding/polyploidbreeding",
-    prjfolder = "Documents/polyploid_breeding/drone_phenotyping/vegetation_indices",
+    prjfolder = "paper-drone2report",
     analysis_folder = "veg_indexes",
-    input_file = "processed_input/normalised_hight_and_volume.csv",
+    input_file = "results/normalised_height.csv",
     label = "average height (m)",
-    outdir = "barley",
+    outdir = "results",
     pattern = "_dem", ## pattern to remove from the dataset column in order to get flight date
-    index_column = "altezza_mean",
+    index_column = "height_mean",
     force_overwrite = FALSE
   ))
 }
