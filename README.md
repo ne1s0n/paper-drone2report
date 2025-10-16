@@ -123,9 +123,13 @@ ready to be plotted (Figure 6, B in the paper) using the [plot_index.R](scripts/
     label = "average height (m)",
     outdir = "results",
     pattern = "_dem", ## suffix of dataset name that follows the date
-    index_column = "height_mean",
+    index_column = "height_mean", ## name of index to plot (column in the csv file)
     force_overwrite = FALSE
   ))
+```
+
+```r
+Rscript scripts/plot_index.R
 ```
 
 ---
