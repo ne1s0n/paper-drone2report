@@ -84,7 +84,7 @@ After setting the parameters, you can run the R script from the command line as:
 
 For this case study, we use the DEM file (digital elevation model) from the same barley field used in case studies n. 1 and n. 2.
 The DEM file is quite large (~500 MB), therefore it is not included in this `Github` repository, but has been uploaded 
-to [figshare](https://doi.org/10.6084/m9.figshare.30327727.v2) (`case-study-3/`), together with the corresponding shape file.
+to [figshare](https://doi.org/10.6084/m9.figshare.30327727) (`case-study-3/`), together with the corresponding shape file.
 
 The configuration file [DEM_barley_field_height.ini](case_studies/case-study-3_DEM_height/DEM_barley_field_height.ini) will instruct **drone2report** 
 to extract the average height for each plot from the DEM file (as sepcified in the shape file: there are 264 plots in the barley field, one per barley accession).
@@ -144,7 +144,7 @@ and thermal. The drone flown over the Fiorenzuola field on June 12, 2024
 (referred with the code 240612).
 
 Given that these are real orthomosaic photos and not small subsets like in
-the other case studies, the data has been uploaded on [figshare](https://doi.org/10.6084/m9.figshare.30327727.v2).
+the other case studies, the data has been uploaded on [figshare](https://doi.org/10.6084/m9.figshare.30327727).
 As a first step, download the data (three tif images, plus a subfolder with all
 the shape files, which are used to define the ROIs). It's about 4.5 GB of data.
 
@@ -205,6 +205,52 @@ The number of weights to be optimized is always `2*number_of_channels+2`
 The system will run for a while,and you can monitor its progress via the logfile specified via the `outfolder` and `outfile` fields. This is a csv table that reports the progress of the optimization process. If you stop the optimization and then start again, the task will try to load the data from the last line of the logfile.
 
 Depending on what `[DATA]` sections are active the tool will optimize either RGB, multispectral, or multisource data. Keep in mind that optimization is a stochastic process and starting again over and over will produce different trajectories.
+
+---
+
+### Case study n. 5 - deep learning for image classification
+
+For this case study a trained deep learning model is applied to a set of existing tif drone images. The output of the classification is stored in a .csv file.
+
+To reproduce the results:
+
+1. go to the [figshare repository](https://doi.org/10.6084/m9.figshare.30327727) and download the folder `case-study-resnet-classification`. This contains the trained model (a keras save, `resnet50_final_notest.keras`) and a folder with the images to be classified (`weed-detection-in-soybean-crops`). Notice that there are four subfolders, one per class
+2. from this github repo download the file `classify_resnet.py`, which contains a drone2report TASK definition. This file must be copied into your drone2report installation folder, and in particular in the `d2r/tasks` subfolder
+3. from this github repo download the `classify_resnet.ini`, which contains the configuration useful for the assigned task. Before running drone2report you need to change this .ini file and make it point to the proper data folder (the place where you saved the data. In particular, change the `infolder=...` value to point to the correct folder
+
+If all the setup is correct you will run drone2report, which will spit a generous log. The first `DATASET SETUP` section will contain 40 repetitions of something similar to the following:
+
+
+
+>    
+    DATASET grass_1
+    Opening image file /home/nelson/paper-drone2report/case_studies/case-study-5_image_classification//weed-detection-in-soybean-crops/grass/1.tif
+     - projection:  PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
+     - geotransform:  minX= 0.0  xRes= 1.0  yRot= 0.0  minY= 0.0  xRot= 0.0  yRes= 1.0
+     - size (cols, rows, bands): 264,272,3
+     - band names:  ['red', 'green', 'blue']
+     - value used for nodata pixels: None
+>   
+     Visible bands (rendered as RGB): ['red', 'green', 'blue']
+>    
+    opening shape file /home/nelson/paper-drone2report/case_studies/case-study-5_image_classification//weed-detection-in-soybean-crops/grass/1.shp
+    - found 1 ROIs with fields ['id', 'gid', 'name', 'geometry']
+    - fields used to uniquely identify a shape: ['gid']
+
+The above section will be repeated 40 times, since we are loading 40 images.
+The software will then enter the task execution phase: the deep learning model is loaded and applied to all images, one at a time.
+
+The results of the predictions are saved in the `results` subfolder.
+
+Tips and tricks:
+
+- to run this case study a number of python modules should be installed, most notably tensorflow. Depending on your machine, this could range from very simple to very challenging. The dataset for this case study is small, so there's no need for actual GPU optimization, but your mileage may vary
+- you may have a .tif image which is not a proper geotiff. This means that you have the image and nothing else: no shapefile, no projection information, nothing. Just the raster data. This case study includes a simple python utility called `build_shapefile.py` which creates stub, default values for all the missing files. It was used on this very dataset, too
+- writing very long .ini files can be tedious and prone to errors. We included a small script to programmatically create the required file. Look into `classify_resnet.ini_builder.py` for inspirations for your future work
+
+
+
+
 
 
 
