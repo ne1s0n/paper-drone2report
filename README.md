@@ -1,4 +1,5 @@
-Repository for code and data used for the software article on [drone2report](https://github.com/ne1s0n/drone2report), recently submitted to [Plant Methods](https://plantmethods.biomedcentral.com/).
+Repository for code and data used for the software article on [drone2report](https://github.com/ne1s0n/drone2report), 
+currently under submission.
 This work is partly supported by the research project [Polyploidbreeding](https://polyploidbreeding.ibba.cnr.it/) (PRIN 2022).
 
 ## Table of Contents
@@ -8,6 +9,7 @@ This work is partly supported by the research project [Polyploidbreeding](https:
  3. [Case study n. 2: monitoring vegetation indices over time](#case-study-n-2---monitoring-vegetation-indices-over-time)
  4. [Case study n. 3: detecting lodging from DEM files](#case-study-n-3---detecting-lodging-from-DEM-files)
  5. [Case study n. 4: loading multisource data, optimize an index](#case-study-n-4---loading-multisource-data-and-optimizing-an-index)
+ 6. [Case study n. 5: deep learning for image classification](#case-study-n-5---deep-learning-for-image-classification)
 
 ### Data description
 
@@ -15,9 +17,12 @@ As input for the case studies illustrated in this article, we used image data on
 
 - i) barley field plots from the project [Polyploidbreeding](https://polyploidbreeding.ibba.cnr.it/)
 - ii) tobacco leaves from [GRABSEEDS](https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS) ([Tang et al. 2024](https://plantmethods.biomedcentral.com/articles/10.1186/s13007-024-01268-2))
+- iii) soybean weed detection from [KAGGLE](https://www.kaggle.com/datasets/fpeccia/weed-detection-in-soybean-crops) repository
 
 You will find the data for the case studies mainly in the [data/](data/) folder, or in the [results/](results/) folder in case of intermediate data/results; 
-however, the precise location of input data is detailed in the description of each case study that you find below.
+however, the precise location of input data is detailed in the description of each case study that you find below. In case of
+large dataset a [figshare](https://doi.org/10.6084/m9.figshare.30327727) has
+also been prepared.
 
 ---
 
