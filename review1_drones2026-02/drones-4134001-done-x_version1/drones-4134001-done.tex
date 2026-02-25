@@ -352,7 +352,8 @@ indices=GLI,HUE
 \section{Results}
 \label{results}
 
-To illustrate how to use \textsc{drone2report} for image processing from drone phenotyping, and to show some potential and useful applications of vegetation indices, we present five case studies: i) thresholding; ii) evolution of vegetation indices over time; iii) detection of lodging; iv) combining multiple sensors and index optimization; v) leveraging a deep neural network for image classification.
+To illustrate how to use \textsc{drone2report} for image processing from drone phenotyping, and to show some potential and useful applications of vegetation indices, we present five case studies: i) thresholding; ii) evolution of vegetation indices over time; iii) analysis of height; iv) combining multiple sensors and index optimization; v) leveraging a deep neural network for image classification. 
+We emphasize that the presented case studies are not original research work, but mere examples of possible uses of \textsc{drone2report}.
 
 \subsection{Case Study N. 1: Thresholding}
 
@@ -444,8 +445,8 @@ GLI \textgreater 0.0) & 254493          & 254251                            & 0.
 In this case study, we use \textsc{drone2report} to monitor the evolution of vegetation indices over time. This is the case when several images of the same field/area are collected at successive time intervals, \textit{e.g.} for a phenotyping experiment in plant breeding.
 Vegetation indices over time may be useful to monitor plant growth, soil coverage, maturation etc. over a period of time of interest, like a growing season.
 
-In this illustration, drone-captured barley-field images from the same experiment as in case study n. 1 were used. However, instead of using one single plot (one single barley variety), the images cover 20 plots (20 barley varieties) for 10 flights.
-For vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships} defined as:
+In this illustration, drone-captured barley-field images from the same experiment as in case study n. 1 were used. However, instead of using one single plot (one single barley variety) at one single timepoint, the images cover 20 plots (20 barley varieties) over 10 flights.
+As vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}, defined as:
 
 \begin{equation}
 \label{formula:HUE}
@@ -455,13 +456,11 @@ For vegetation indices, we use GLI (described before, see Formula~\ref{formula:G
 where $\textbf{p} := [p_{red}, p_{green}, p_{blue}]$ is a single pixel of an RGB image and contains the normalized intensities of the three channels.
 HUE too can be used to discriminate between vegetation and non-vegetation, e.g. soil vs plant, although it is more dependent on lighting, camera and background \cite{meyer2008verification}.
 
-To calculate vegetation indices over multiple images (i.e. successive flights) for field/area using \textsc{drone2report} we can follow two approaches: i) we can add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once; or ii) iterate over the number of images, automatically generating each .ini file, thus running \textsc{drone2report} as many times as there are images.
+To calculate vegetation indices over multiple images (i.e. successive flights) using \textsc{drone2report} we can follow two approaches: i) we can add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once; or ii) iterate over the number of images, automatically generating each .ini file, thus running \textsc{drone2report} as many times as there are images.
 
-
-
-Once the chosen vegetation indices are computed for all multiple images, it is possible to plot the trends over time to monitor the evolution of the field. 
-In the barley field example each plot represents a different variety. It is thus possible to also implement inter-varietal comparisons. This is shown in Figure~\ref{fig:time-curves} (B), where we highlighted two arbitrary varieties (in red and blue). The barley plots are shown to start with moderate green intensity (sparse vegetation), reach a maximum around April to early May (thick vegetation), then decrease toward the end of the growing season (matured yellowish barley in June). This trend matches what we observed in the RGB images (Figure~\ref{fig:time-curves}, A).
-The two indexes follow a similar trend, with a peak and a decrease. Interestingly, GLI peaks earlier than HUE, which in turn shows a sharper peak around May. The indexes also show variability between the different barley varieties, linked to their different genetic background.
+Once the chosen vegetation indices are computed for all multiple images, it is possible to plot their trends over time to monitor the evolution of the field. 
+In the barley example each plot represents a different variety. It is thus possible to make inter-varietal comparisons. This is shown in Figure~\ref{fig:time-curves} (B), where we highlighted two arbitrary varieties (in red and blue). The barley plots start with moderate green intensity (sparse vegetation), reach a maximum around April to early May (thick vegetation), then decrease toward the end of the growing season (matured yellowish barley in June). This trend matches what we observed in the RGB images (Figure~\ref{fig:time-curves}, A).
+The two indexes follow a similar trend, with a peak and a decrease. Interestingly, GLI peaks earlier than HUE, which in turn shows a sharper peak around May. Variability exists between barley varieties, probably linked to their different genetic make-up.
 
 \begin{figure}[H]
 %    \centering
@@ -470,7 +469,7 @@ The two indexes follow a similar trend, with a peak and a decrease. Interestingl
     \label{fig:time-curves}
 \end{figure}
 
-\subsection{Case Study N. 3: Detecting Lodging from DEM Files}
+\subsection{Case Study N. 3: Analysis of height from DEM Files}
 
 As mentioned before, drone phenotyping produces also a DEM file alongside the orthomosaic image. 
 DEM files report the height of each pixel in the orthomosaic image: this height is usually reported in meters, and is measured from a reference ellipsoid. 
