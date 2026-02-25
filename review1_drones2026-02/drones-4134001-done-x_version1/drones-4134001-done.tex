@@ -410,7 +410,7 @@ Results are shown in Table~\ref{tab:index-thresholds}.
 We see that the number of pixels used decreases with the threshold used. Not surprisingly, given that GLI measures the green intensity of pixels in the image, GLI values increase with the threshold, from 0.26 to 0.93: essentially, since Figure~\ref{fig:base-field-plot} (A) is a barley field, we are progressively getting rid of the soil and of the less green parts of the plants. 
 Depending on the application, it may be desirable to focus only on vegetation, or even on the plants' greenest parts. In contrast, it may be acceptable to remove only pixels with negative GLI values (GLI $> 0.0$), which are definitely not green. This is reported in Table~\ref{tab:index-thresholds}, second row.
 
-Note that in these examples, for simplicity, we applied thresholding on the same index that was computed. However, it is possible to threshold the image based on one index and then compute one (or more) other indices on the retained pixels in a single pass. Moreover, it is also possible to specify more complex thresholding, e.g. banding, such as $(\text{GLI} > 0) \wedge (\text{GLI} < 0.8)$.
+Note that in these examples, for simplicity, we applied thresholding on the same index that was computed. However, it is possible to threshold the image based on one index and then compute one (or more) other indices on the retained pixels in a single pass. Moreover, it is also possible to specify more complex thresholding, e.g. banding, such as $(\text{GLI} > 0) \wedge (\text{GLI} < 0.8)$. In all cases, the evaluation of different index values and the selection of the best threshold is not automated in \textsc{drone2report}.
 
 \begin{table}[H]
 \small
