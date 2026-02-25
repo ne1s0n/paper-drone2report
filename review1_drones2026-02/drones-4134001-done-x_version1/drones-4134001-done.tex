@@ -249,9 +249,9 @@ In this paper, we present the technical details of this new tool, followed by fo
 
 \subsection{Data Workflow}
 The general workflow of \textsc{drone2report} is reported in Figure~\ref{fig:workflow}. 
-We adopt here the following definitions: orthophotos are single drone-captured images that have been geometrically corrected (perspective, camera tilt etc.), while orthomosaics are collection of orthophotos stitched together (taking care of overlap etc.) \cite{park2022deep}.
-The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into what is called an orthophoto (or orthomosaic, or orthorectified image). This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
-The generation of orthophotos is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and QGIS \cite{moyroud2018introduction}. Together with the orthorectified image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
+We adopt here the following definitions: orthophotos (or orthorectified images) are single drone-captured images that have been geometrically corrected (perspective, camera tilt etc.), while orthomosaics are collection of orthophotos stitched together (taking care of overlaps etc.) \cite{park2022deep}.
+The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into an orthomosaic. This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
+The generation of orthophotos and orthomosaics is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and QGIS \cite{moyroud2018introduction}. Together with the orthomosaic image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
 
 \begin{figure}[H]
 %    \centering
@@ -706,6 +706,20 @@ The code and data to reproduce the case studies for this paper are available at 
 \ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
 \ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
 \csname PreBibitemsHook\endcsname
+
+%%% 36
+\bibitem[\protect\citeauthoryear{Park et~al.}{2023}]{park2022deep}
+\begin{barticle}
+\bauthor{\bsnm{Park}, \binits{J.}},
+\bauthor{\bsnm{Cho}, \binits{Y.}},
+\bauthor{\bsnm{Kim}, \binits{S.}}:
+\batitle{Deep learning-based UAV image segmentation and inpainting for generating vehicle-free orthomosaic}.
+\bjtitle{International Journal of Applied Earth Observation and Geoinformation}
+\bvolume{115}(\bissue{}),
+\bfpage{103111}
+(\byear{2022})
+\end{barticle}
+\endbibitem
 
 %%% 1
 \bibitem[\protect\citeauthoryear{Machwitz et~al.}{2021}]{machwitz2021bridging}
