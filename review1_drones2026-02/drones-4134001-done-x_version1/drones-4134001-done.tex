@@ -247,9 +247,10 @@ In this paper, we present the technical details of this new tool, followed by fo
 \label{methods}
 
 
-
 \subsection{Data Workflow}
-The general workflow of \textsc{drone2report} is reported in Figure~\ref{fig:workflow}. The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into what is called an orthophoto (or orthomosaic, or orthorectified image). This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
+The general workflow of \textsc{drone2report} is reported in Figure~\ref{fig:workflow}. 
+We adopt here the following definitions: orthophotos are single drone-captured images that have been geometrically corrected (perspective, camera tilt etc.), while orthomosaics are collection of orthophotos stitched together (taking care of overlap etc.) \cite{park2022deep}.
+The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into what is called an orthophoto (or orthomosaic, or orthorectified image). This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
 The generation of orthophotos is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and QGIS \cite{moyroud2018introduction}. Together with the orthorectified image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
 
 \begin{figure}[H]
