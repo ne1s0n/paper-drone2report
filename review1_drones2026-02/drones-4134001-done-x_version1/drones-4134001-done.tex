@@ -274,7 +274,7 @@ One \textit{dataset} can thus be composed of serveral orthophotos, and several \
 
 \textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed to agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
 
-An example configuration (.ini) file is provided in Box~\ref{lst:config}, demonstrating how to compute two vegetation indices from a single RGB image.
+An example configuration (.ini) file is provided in Listing~\ref{lst:config}, demonstrating how to compute two vegetation indices from a single RGB image.
 The basic structure of the configuration file includes three main sections: i) DEFAULT specifies base parameters like the input and output folders, the number of cores (processing units) to be used, and whether a verbose output log is desired; ii) DATA specifies the image file name (with some metadata, i.e. date, description etc.), its type (only tif\_multichannel is currently supported), the value that indicates missing pixel data (e.g. $-1$), the channels (total and visible), the maximum pixel intensity value, the path to the shape file; iii) TASK specifies which vegetation indices will be computed. 
 More details on how to use \textsc{drone2report} can be found in the on-line documentation (\url{https://drone2report.readthedocs.io/en/latest/}).
 Once the configuration file is ready, \textsc{drone2report} will be run from the shell command line.
@@ -363,7 +363,7 @@ In the first case study we use \textsc{drone2report} to calculate a vegetation i
 In this example we compute the Green Leaf Index (GLI), whose positive values tend to identify green vegetation (e.g. leaves and stems), while negative values tend to reflect soil/non-vegetation \cite{louhaichi2001spatially}. 
 Our objective might be to calculate the proportion of vegetation to soil, or to compare the green intensity of different fields or over time. In both cases, we may want to remove the image background (i.e. ``noise'', like a road, a pond or just bare soil) which can be achieved via thresholding \cite{hamuda2016survey}.
 
-To illustrate the removal of background noise, we use one RGB image of tobacco leaves from the Github repository (\url{https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS}) of the \textsc{GRABSEED} software \cite{tang2024grabseeds} (see Figure~\ref{fig:tobacco-leaves})
+To illustrate the removal of background noise, we use one RGB image of tobacco leaves from the Github repository (\url{https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS}) of the \textsc{GRABSEED} software \cite{tang2024grabseeds} (Figure~\ref{fig:tobacco-leaves})
 
 \begin{figure}[H]
 %    \centering
