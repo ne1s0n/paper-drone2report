@@ -295,28 +295,6 @@ Internally, \textsc{drone2report} uses the GDAL \cite{GDALmanual} and geopandas 
 The \textsc{drone2report} open-source code is available on-line in the following Github repository: \url{https://github.com/ne1s0n/drone2report}.
 
 \begin{minipage}{\hsize}%
-\lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=python}% Set your language (you can change the language for each code-block optionally)
-
-\begin{lstlisting}[caption={Example of function computing the GLI vegetation index on a passed image},label={lst:GLI_function}]
-def GLI(img, channels):
-  """Green leaf index, uses red, green, blue channels"""
-  try:
-    red   = img[:,:,channels.index('red')]
-    green = img[:,:,channels.index('green')]
-    blue  = img[:,:,channels.index('blue')]
-   
-  except ValueError:
-    return np.nan
-    
-  return(
-    (2.0*green - red - blue) / 
-    (2.0*green + red + blue)
-  ) 
-\end{lstlisting}
-\end{minipage}
-
-
-\begin{minipage}{\hsize}%
 \lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=bash}% Set your language (you can change the language for each code-block optionally)
 %%% Start your code-block
 \begin{lstlisting}[caption={Example of configuration .ini file to run drone2report},label={lst:config}]
@@ -348,6 +326,27 @@ indices=GLI,HUE
 \end{lstlisting}
 %\caption{Box: example of configuration .ini file to run drone2report}
 %\label{box:config}
+\end{minipage}
+
+\begin{minipage}{\hsize}%
+\lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=python}% Set your language (you can change the language for each code-block optionally)
+
+\begin{lstlisting}[caption={Example of function computing the GLI vegetation index on a passed image},label={lst:GLI_function}]
+def GLI(img, channels):
+  """Green leaf index, uses red, green, blue channels"""
+  try:
+    red   = img[:,:,channels.index('red')]
+    green = img[:,:,channels.index('green')]
+    blue  = img[:,:,channels.index('blue')]
+   
+  except ValueError:
+    return np.nan
+    
+  return(
+    (2.0*green - red - blue) / 
+    (2.0*green + red + blue)
+  ) 
+\end{lstlisting}
 \end{minipage}
 
 
