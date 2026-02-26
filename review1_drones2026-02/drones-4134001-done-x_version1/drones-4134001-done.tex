@@ -470,14 +470,14 @@ The two indexes follow a similar trend, with a peak and a decrease. Interestingl
     \label{fig:time-curves}
 \end{figure}
 
-\subsection{Case Study N. 3: Analysis of height from DEM Files}
+\subsection{Case Study N. 3: Analysis of height from DEM files}
 
 As mentioned before, drone phenotyping produces also a DEM file alongside the orthomosaic image. 
 DEM files report the height of each pixel in the orthomosaic image: this height is usually reported in meters, and is measured from a reference ellipsoid. 
 Given that the first flight is usually performed on an empty field, it can be used as reference. By subtracting the heights of the first flight from all successive flights, it is possible to estimate plant growth.
 
 In Figure~\ref{fig:dem-height}, A, a hill-shade rendering of a DEM file for the example barley field is reported (part of it), to visualize the 3D structure of the field image. Pixel heights will differ depending on the content, being soil, an erect plant, or a lodged one. 
-The evolution of per-plot average heights is reported in Figure~\ref{fig:dem-height} (B) for the successive flights. Note that the very first flight is used as reference and thus all pixels are zero by definition.
+The evolution of per-plot average heights over time is reported in Figure~\ref{fig:dem-height} (B) for the successive flights. Note that the very first flight is used as reference and thus all pixels are zero by definition.
 
 \begin{figure}[H]
 %    \centering
@@ -486,11 +486,13 @@ The evolution of per-plot average heights is reported in Figure~\ref{fig:dem-hei
     \label{fig:dem-height}
 \end{figure}
 
-After the first flight the heights quickly increase up to the 5th-6th flight (mid-April: the plants were growing). In our barley field trials, \textsc{drone2report} shows a decrease of height after the 7th flight due to lodging, consistently with the genetic material examined (old cultivars and landraces) and the adverse weather conditions.
+%The analysis of DEM files allows us to analyse how the height of crops evolve over time, which might be due to different causes.
+After the first flight the heights quickly increase up to the 5th-6th flight (mid-April: the plants were growing). In our barley field trials, \textsc{drone2report} shows a decrease of height after the 7th flight due, in this case, to lodging, consistently with the genetic material examined (old cultivars and landraces) and the adverse weather conditions.
 This can also be visually confirmed examining the right-most part of Figure~\ref{fig:time-curves} (A), where a large portion of barley plants appears to have been flattened. 
-Therefore, we can see that the analysis of DEM files allowed us to detect if and when lodging occurred in our field of interest.
+In general, similar height-decrease patterns may be linked to a variety of casues, e.g. they may also indicate the moment when the spike begins to fall over (barley plants are known to “hide” the spike in the vegetation). 
+Here we knew there was lodging; however, to be able to detect lodging (and where it occurred in the field) more complex machine-learning models for image segmentation and classification should be implemented, as shown in section~\ref{dl-classification}.  
 
-It is also possible to estimate the per-plot volumes using \textsc{drone2report}. Consider that the integral of an area is proportional to the sum of the heights of each pixel. When computing indexes like GLI or HUE the actual result of the computation is a matrix with exactly the same dimension as the ROI (i.e. the plot). It is however possible to select "indexes" that return a single scalar number, e.g. the summation of all values of the DEM file for a plot. This serves as a numeric approximation of the volume, which in turn could be used to estimate crop yield or biomass.
+From the DEM files also the per-plot volumes can be estimated using \textsc{drone2report}. Consider that the integral of an area is proportional to the sum of the heights of each pixel. When computing indexes like GLI or HUE the actual result of the computation is a matrix with exactly the same dimension as the ROI (i.e. the plot). It is however possible to select "indexes" that return a single scalar number, e.g. the summation of all values of the DEM file for a plot. This serves as a numeric approximation of the volume, which in turn could be used to estimate crop yield or biomass.
 
 \subsection{Case Study N. 4: Index Optimization on Images Merged from  Heterogeneous Sensors}
 
@@ -521,6 +523,7 @@ The results show that it is possible to optimize a custom vegetation index on a 
 The indices obtained with this case study are likely overfitting, at least partially. A focused, future study, could estimate the fraction of overfitting and apply regularization techniques to ensure good generalization of the results.
 
 \subsection{Case Study N. 5: Deep Learning for Image Classification}
+\label{dl-classification}
 
 \textsc{drone2report} can be used to feed georeferenced data into a trained deep-learning model and to collect inference results with minimal user-provided code. For this case study, we used UAV imagery from a publicly available dataset developed for weed detection in soybean \cite{Peccia_2018}.
 As a preliminary step, we trained a deep neural network based on the well-known ResNet50 architecture \cite{he2016deep}, as implemented in the TensorFlow/Keras framework \cite{chollet2015keras}.
