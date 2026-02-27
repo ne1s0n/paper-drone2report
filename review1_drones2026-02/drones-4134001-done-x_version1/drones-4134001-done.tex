@@ -446,7 +446,8 @@ GLI \textgreater 0.0) & 254493          & 254251                            & 0.
 In this case study, we use \textsc{drone2report} to monitor the evolution of vegetation indices over time. This is the case when several images of the same field/area are collected at successive time intervals, \textit{e.g.} for a phenotyping experiment in plant breeding.
 Vegetation indices over time may be useful to monitor plant growth, soil coverage, maturation etc. over a period of time of interest, like a growing season.
 
-In this illustration, drone-captured barley-field images from the same experiment as in case study n. 1 were used. However, instead of using one single plot (one single barley variety) at one single timepoint, the images cover 20 plots (20 barley varieties) over 10 flights.
+In this illustration, drone-captured barley-field images from the same experiment as in case study n. 1 were used; within this field, a different barley variety is sown in each plot.
+However, instead of using one single-plot image (one single barley variety) at one single timepoint, the images selected for this case study cover 20 plots (20 barley varieties) over 10 flights.
 As vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}, defined as:
 
 \begin{equation}
@@ -482,7 +483,7 @@ The evolution of per-plot average heights over time is reported in Figure~\ref{f
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=0.95\linewidth]{figs/dem-height.png}
-    \caption{Example .dem file of a barley field (left: flight on 19/04/2024); plant height (metres) calculated from the .dem file by drone2report, over 10 flights covering the growing season (right).}
+    \caption{Example .dem file of a barley field (left: flight on 19/04/2024); plant height (metres) calculated from the .dem file by drone2report, over 10 flights covering the growing season (right; the dates fo the 10 flights are the same as in Figure~\ref{fig:time-curves}).}
     \label{fig:dem-height}
 \end{figure}
 
