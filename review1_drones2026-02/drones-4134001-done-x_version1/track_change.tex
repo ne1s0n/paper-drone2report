@@ -1,7 +1,7 @@
 %Version 3 December 2023
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL ../drones-4134001-done-x_version0/drones-4134001-done.tex   Wed Feb 25 10:13:52 2026
-%DIF ADD drones-4134001-done.tex                                     Fri Feb 27 09:16:21 2026
+%DIF ADD drones-4134001-done.tex                                     Fri Feb 27 11:00:22 2026
 % See section 11 of the User Manual for version history
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -212,7 +212,11 @@ $^{5}$ \quad Research \& Development, SIS - Società Italiana Sementi, {Via Mira
 %% Sample for unstructured abstract %%
 %%==================================%%
 
-\abstract{\textbf{Background}: Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthophotos into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups. \textbf{Results}: We present \textsc{drone2report}, an open-source python-based software that processes orthophotos from UAV flights to generate vegetation indices, summary statistics, and visual reports, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task.
+%DIF 212c212
+%DIF < \abstract{\textbf{Background}: Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthophotos into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups. \textbf{Results}: We present \textsc{drone2report}, an open-source python-based software that processes orthophotos from UAV flights to generate vegetation indices, summary statistics, and visual reports, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task.
+%DIF -------
+\abstract{\textbf{Background}: Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthophotos into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups. \textbf{Results}: We present \textsc{drone2report}, an open-source python-based software that processes orthophotos/orthomosaics from UAV flights to generate vegetation indices, summary statistics and derived subimages, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task. %DIF > 
+%DIF -------
 These examples demonstrate the tool’s ability to automate analysis, integrate heterogeneous data and models, and support reproducible computation of agronomically relevant traits. \textbf{Conclusions}: \textsc{drone2report}  streamlines UAV image processing for precision agriculture by linking orthophoto data to standardized, plot-level outputs. Its modular, configuration-driven design allows transparent workflows, easy customization, and integration of multiple sensors within a unified analytical framework. By facilitating reproducible, multi-modal image analysis, drone2report lowers technical barriers to UAV-based phenotyping and opens the way to robust, data-driven crop monitoring and breeding applications.
 }
 
@@ -332,19 +336,20 @@ In this paper, we present the technical details of this new tool, followed by fo
 \section{Methods}
 \label{methods}
 
-
 \subsection{Data Workflow}
 The general workflow of \textsc{drone2report} is reported in Figure~\ref{fig:workflow}. 
 \DIFaddbegin \DIFadd{We adopt here the following definitions: orthophotos (or orthorectified images) are single drone-captured images that have been geometrically corrected (perspective, camera tilt etc.), while orthomosaics are collection of orthophotos stitched together (taking care of overlaps etc.) \mbox{%DIFAUXCMD
 \cite{park2022deep}}\hspace{0pt}%DIFAUXCMD
 .
 }\DIFaddend The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into \DIFdelbegin \DIFdel{what is called an orthophoto (or orthomosaic, or orthorectified image)}\DIFdelend \DIFaddbegin \DIFadd{an orthomosaic}\DIFaddend . This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
-The generation of orthophotos \DIFaddbegin \DIFadd{and orthomosaics }\DIFaddend is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and QGIS \cite{moyroud2018introduction}. Together with the \DIFdelbegin \DIFdel{orthorectified }\DIFdelend \DIFaddbegin \DIFadd{orthomosaic }\DIFaddend image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
+The generation of orthophotos \DIFaddbegin \DIFadd{and orthomosaics }\DIFaddend is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and \DIFdelbegin \DIFdel{QGIS \mbox{%DIFAUXCMD
+\cite{moyroud2018introduction}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{Agisoft Metashape version 1.6.4 (Agisoft LLC., St. Petersburg, Russia), for orthorectiphication }\DIFaddend . Together with the \DIFdelbegin \DIFdel{orthorectified }\DIFdelend \DIFaddbegin \DIFadd{orthomosaic }\DIFaddend image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
 
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=0.9\linewidth]{figs/workflow.png}
-    \caption{General application workflow. Panel a: drones capture raw, partial images of the field (depending on the mounted sensors). All images from a single flight are collated in a unique orthophoto.  Panel b: orthophotos coming from one or more sensors, together with a shape file that specifies the ROIs, enter \textsc{drone2report} and are converted to an internal \textit{dataset} object. Panel c: all datasets are inputed, in turn, to all queued tasks, each task producing its specific output (e.g. tables, other images etc.)}
+    \caption{General application workflow. Panel a: drones capture raw, partial images of the field (depending on the mounted sensors). All images from a single flight are collated in a unique \DIFdelbeginFL \DIFdelFL{orthophoto}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{orthomosaic}\DIFaddendFL .  Panel b: \DIFdelbeginFL \DIFdelFL{orthophotos }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{orthomosaics }\DIFaddendFL coming from one or more sensors, together with a shape file that specifies the ROIs, enter \textsc{drone2report} and are converted to an internal \textit{dataset} object. Panel c: all datasets are inputed, in turn, to all queued tasks, each task producing its specific output (e.g. tables, other images etc.)}
     \label{fig:workflow}
 \end{figure}
 
@@ -354,7 +359,7 @@ Orthophotos are typically multichannel images, with common cases being three cha
 
 \textsc{drone2report} can receive as input one or more orthophotos. If more than one image is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via interpolation and taking into account possible differences in georeferencing data. This results in the creation of a single tensor-like data structure with a single shape (width and length) and as many channels as the sum of all input images channels. This unified representation enables to perform algebraic operations on all combined channels simultaneously, and even combine data coming from different flights and sensors. Even when multiple orthophotos are combined into a \textit{dataset} the ROIs are specified only once.
 
-One \textit{dataset} can thus be composed of serveral orthophotos, and several \textit{dataset}s can be loaded. \textsc{drone2report} then proceeds to feed all the data to a queue of tasks. As of the current implementation, a number of tasks is implemented for computing various vegetation indices, rescaling and extracting subimages, and preparing data for successive elaboration (\textit{e. g.} training neural networks). 
+One \textit{dataset} can thus be composed of \DIFdelbegin \DIFdel{serveral }\DIFdelend \DIFaddbegin \DIFadd{several }\DIFaddend orthophotos, and several \textit{dataset}s can be loaded. \textsc{drone2report} then proceeds to feed all the data to a queue of tasks. As of the current implementation, a number of tasks is implemented for computing various vegetation indices, rescaling and extracting subimages, and preparing data for successive elaboration (\textit{e. g.} training neural networks). 
 
 \subsection{Software Implementation}
 
@@ -368,8 +373,6 @@ Once the configuration file is ready, \textsc{drone2report} will be run from the
 The modularity of \textsc{drone2report} can be leveraged at several levels. The easiest customization would be to add new specialized vegetation indices to the proper python file (e.g. \verb|matrix_returning_indices.py| file in the folder \verb|/drone2report/d2r/tasks/| from the github repository). Listing~\ref{lst:GLI_function} reports an example of such a function.
 
 A more powerful intervention consists of designing a new TASK, which will then require its own section in the .ini file. For that purpose, a TASK template is provided. Finally, new types of DATA could be supported, which would require some care to curate the exposed functionalities.
-
-
 
 
 New indices and functionality can be proposed and eventually integrated in the main software codebase via Github pull requests.
@@ -414,8 +417,10 @@ The \textsc{drone2report} open-source code is available on-line in the following
 %DIF < 
 \DIFdelend \lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=bash}% Set your language (you can change the language for each code-block optionally)
 %%% Start your code-block
-\begin{lstlisting}[caption={Example of configuration .ini file to run drone2report},label={lst:config}]
+\DIFmodbegin
+\begin{lstlisting}[caption={Example of configuration .ini file to run drone2report},label={lst:config},alsolanguage=DIFcode]
 [DEFAULT]
+%DIF > #these parameters are shared by all sections
 infolder=</base/folder>
 outfolder=</output/folder>
 cores=4
@@ -423,6 +428,7 @@ skip_if_already_done=False
 verbose=True
 
 [DATA image]
+%DIF > #this section specifies an input orthomosaic
 active=True
 meta_date=2024/03/25
 meta_time=1.45 pm
@@ -437,10 +443,12 @@ shapes_file=${DEFAULT:infolder}/<img.shp>
 shapes_index=id
 
 [TASK indices]
+%DIF > #this section tells DRONE2REPORT to compute two indices: GLI and HUE
 active=True
 outfolder=${DEFAULT:outfolder}/<results>
 indices=GLI,HUE
 \end{lstlisting}
+\DIFmodend
 %\caption{Box: example of configuration .ini file to run drone2report}
 %\label{box:config}
 \end{minipage}
@@ -537,7 +545,7 @@ Note that in these examples, for simplicity, we applied thresholding on the same
 
 \begin{table}[H]
 \small
-\caption{Green leaf index (GLI) values with different thresholding, as computed by [TASK index]. For each Region Of Interest (as defined in the shapefile) a set of summary statistics is computed for each index (mean, standard deviation, min and max). after\_th: n. of pixels left for the calculation after thresholding.}
+\caption{\DIFdelbeginFL \DIFdelFL{Green }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{An example of reporting table produced by }\textsc{\DIFaddFL{drone2report}}\DIFaddFL{: green }\DIFaddendFL leaf index (GLI) values with different thresholding, as computed by [TASK index]. For each Region Of Interest (as defined in the shapefile) a set of summary statistics is computed for each index (mean, standard deviation, min and max). after\_th: n. of pixels left for the calculation after thresholding. \DIFaddbeginFL \DIFaddFL{Note that with this settings the last column (GLI\_min) strictly reflects the progression of thresholding.}\DIFaddendFL }
 \label{tab:index-thresholds}
 \begin{tabular}{lllllllll}
 
@@ -568,8 +576,10 @@ In this case study, we use \textsc{drone2report} to monitor the evolution of veg
 Vegetation indices over time may be useful to monitor plant growth, soil coverage, maturation etc. over a period of time of interest, like a growing season.
 
 In this illustration, drone-captured barley-field images from the same experiment as in case study n. 1 were used\DIFaddbegin \DIFadd{; within this field, a different barley variety is sown in each plot}\DIFaddend .
-However, instead of using one \DIFdelbegin \DIFdel{single plot }\DIFdelend \DIFaddbegin \DIFadd{single-plot image }\DIFaddend (one single barley variety) \DIFaddbegin \DIFadd{at one single timepoint}\DIFaddend , the images \DIFaddbegin \DIFadd{selected for this case study }\DIFaddend cover 20 plots (20 barley varieties) \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{over }\DIFaddend 10 flights.
-\DIFdelbegin \DIFdel{For }\DIFdelend \DIFaddbegin \DIFadd{As }\DIFaddend vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}\DIFaddbegin \DIFadd{, }\DIFaddend defined as:
+However, instead of using one \DIFdelbegin \DIFdel{single plot }\DIFdelend \DIFaddbegin \DIFadd{single-plot image }\DIFaddend (one single barley variety) \DIFaddbegin \DIFadd{at one single timepoint}\DIFaddend , the images \DIFaddbegin \DIFadd{selected for this case study }\DIFaddend cover 20 plots (20 barley varieties) \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{over }\DIFaddend 10 flights. \DIFdelbegin \DIFdel{For }\DIFdelend \DIFaddbegin \DIFadd{Flights were performed in Fiorenzuola d'Arda 
+(Italy, $44^\circ 55'40.2466'', 009^\circ53'42.4730''$)
+between Feb 19, 2024 (first flight on empty field) and June 12, 2024 (tenth flight).
+As }\DIFaddend vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}\DIFaddbegin \DIFadd{, }\DIFaddend defined as:
 
 \begin{equation}
 \label{formula:HUE}
@@ -582,7 +592,7 @@ HUE too can be used to discriminate between vegetation and non-vegetation, e.g. 
 To calculate vegetation indices over multiple images (i.e. successive flights) \DIFdelbegin \DIFdel{for field/area }\DIFdelend using \textsc{drone2report} we can follow two approaches: i) we can add several data sections in the configuration (.ini) file, one for each image, then run drone2report just once; or ii) iterate over the number of images, automatically generating each .ini file, thus running \textsc{drone2report} as many times as there are images.
 
 Once the chosen vegetation indices are computed for all multiple images, it is possible to plot \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{their }\DIFaddend trends over time to monitor the evolution of the field. 
-In the barley \DIFdelbegin \DIFdel{field }\DIFdelend example each plot represents a different variety. It is thus possible to \DIFdelbegin \DIFdel{also implement }\DIFdelend \DIFaddbegin \DIFadd{make }\DIFaddend inter-varietal comparisons. This is shown in Figure~\ref{fig:time-curves} (B), where we highlighted two arbitrary varieties (in red and blue). The barley plots \DIFdelbegin \DIFdel{are shown to }\DIFdelend start with moderate green intensity (sparse vegetation), reach a maximum around April to early May (thick vegetation), then decrease toward the end of the growing season (matured yellowish barley in June). This trend matches what we observed in the RGB images (Figure~\ref{fig:time-curves}, A).
+In the barley \DIFdelbegin \DIFdel{field }\DIFdelend example each plot represents a different variety \DIFaddbegin \DIFadd{(with repetitions due to experimental design)}\DIFaddend . It is thus possible to \DIFdelbegin \DIFdel{also implement }\DIFdelend \DIFaddbegin \DIFadd{make }\DIFaddend inter-varietal comparisons. This is shown in Figure~\ref{fig:time-curves} (B), where we highlighted two arbitrary varieties (in red and blue). The barley plots \DIFdelbegin \DIFdel{are shown to }\DIFdelend start with moderate green intensity (sparse vegetation), reach a maximum around April to early May (thick vegetation), then decrease toward the end of the growing season (matured yellowish barley in June). This trend matches what we observed in the RGB images (Figure~\ref{fig:time-curves}, A).
 The two indexes follow a similar trend, with a peak and a decrease. Interestingly, GLI peaks earlier than HUE, which in turn shows a sharper peak around May. \DIFdelbegin \DIFdel{The indexes also show variability between the different }\DIFdelend \DIFaddbegin \DIFadd{Variability exists between }\DIFaddend barley varieties, \DIFaddbegin \DIFadd{probably }\DIFaddend linked to their different genetic \DIFdelbegin \DIFdel{background}\DIFdelend \DIFaddbegin \DIFadd{make-up}\DIFaddend .
 
 \begin{figure}[H]
@@ -618,7 +628,10 @@ Here we knew there was lodging; however, to be able to detect lodging (and where
 
 \subsection{Case Study N. 4: Index Optimization on Images Merged from  Heterogeneous Sensors}
 
-\textsc{drone2report} can transparently import images from different sensors and merge them into a single data structure where all channels of the original images are stacked. For example, it is possible to merge images coming from visible wavelength (e.g. RGB images), from multispectral sensors (e.g. infra-red and near-infra-red images) and from a thermal camera. Differences in image resolutions are managed automatically via interpolation, and differences in spatial reference system (SRS) are handled via reprojection. The resulting data structure exposes, for each pixel, a number of channels equal to the sum of all channels of the original images. Thus, it is possible to leverage different data sources together and transparently.
+\textsc{drone2report} can transparently import images from different sensors and merge them into a single data structure where all channels of the original images are stacked. For example, it is possible to merge images coming from visible wavelength (e.g. RGB images), from \DIFdelbegin \DIFdel{multispectral sensors }\DIFdelend \DIFaddbegin \DIFadd{sensors in the non-visible wavelength }\DIFaddend (e.g. infra-red and near-infra-red images) and from \DIFdelbegin \DIFdel{a thermal camera}\DIFdelend \DIFaddbegin \DIFadd{thermal cameras}\DIFaddend . Differences in image resolutions are managed automatically via \DIFdelbegin \DIFdel{interpolation, and differences }\DIFdelend \DIFaddbegin \DIFadd{cubic interpolation. Differences }\DIFaddend in spatial reference system (SRS) are handled via reprojection \DIFdelbegin \DIFdel{. }\DIFdelend \DIFaddbegin \DIFadd{of all data into the reference taken from the first input orthomosaic. ROIs are taken from the single shape file (common to all orthomosaics).
+}
+
+\DIFaddend The resulting data structure exposes, for each pixel, a number of channels equal to the sum of all channels of the original images. Thus, it is possible to leverage different data sources together and transparently.
 
 In this case study three images are merged: one RGB (three bands), one multispectral (ten bands) and one thermal (one band). All images are of a barley field close to harvesting time. The field is structured in 264 plots, each phenotyped for heading date, i.e. the number of days from sowing when the spike (head) has emerged from the flag leaf sheath in 50\% of the plants in a plot. The aim of of this case study is to optimize a new vegetation index of the form:
 
@@ -627,7 +640,7 @@ In this case study three images are merged: one RGB (three bands), one multispec
 I(\textbf{p}) = \frac{n_0 + \sum_{i=1}^{14} n_i p_i}{d_0 + \sum_{i=1}^{14} d_i p_i}
 \end{equation}
 
-where $\textbf{p} \in \mathbb{R}^{14}$ is a pixel on the merged 14-bands image. The set of 30 coefficients $[n_0, ..., n_{14}, d_0, ..., d_{14}]$ are to be chosen to maximize the Pearson's correlation between the array of heading dates and the array of per-plot average index values. Formula~\ref{optimal_index} is designed as a generalization of the most commonly used indices such as NDVI, GLI, VARI, etc.\cite{henrich2012entwicklung}.
+where $\textbf{p} \in \mathbb{R}^{14}$ is a pixel on the merged 14-bands image. The set of 30 coefficients $[n_0, ..., n_{14}, d_0, ..., d_{14}]$ are to be chosen to maximize the Pearson's correlation between the array of \DIFdelbegin \DIFdel{heading dates and the array of }\DIFdelend per-plot average index values \DIFaddbegin \DIFadd{and the target variable (heading dates, collected in a 264-cells array)}\DIFaddend . Formula~\ref{optimal_index} is designed as a generalization of the most commonly used indices such as NDVI, GLI, VARI, etc.\cite{henrich2012entwicklung}.
 
 This thus becomes a 30-parameters optimization problem, which can be solved via a new custom \textsc{drone2report} task. Internally, the task uses \texttt{Scipy}'s \cite{2020SciPy-NMeth} \textit{optimize.minimize()} function based on the \textit{Nelder-Mead} numerical method \cite{nelder1965simplex}. The results of the optimization process are reported in Figure~\ref{fig:optimization_trajectory}, which shows the optimization trajectory of the custom index in equation~\ref{optimal_index} through all training iterations. The index was optimized on the merged 14-bands image and, for comparison, on both the visible RGB image and the 10-bands multispectral image, separately. 
 Additionally, the plot also reports the Pearson's correlation with heading date for the two best performing vegetation indices among the twenty one currently implemented in \textsc{drone2report}, namely NDVI (Normalized Difference Vegetation Index, for multispectral images) and GLI (Green Leaf Index, for RGB images).
@@ -635,7 +648,7 @@ Additionally, the plot also reports the Pearson's correlation with heading date 
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=1\linewidth]{figs/trajectories.png}
-    \caption{Optimization trajectories through training cycles. The custom index described in Formula~\ref{optimal_index} was optimized for maximal Pearson's correlation between the vector of its per-plot averages and the phenotype \textit{heading date}. Solid lines show three optimization trajectories on different input images, namely RGB, 10-bands multispectral, and a 14-bands merged image containing RGB, multispectral and temperature data. For reference, the two best performing indices (NDVI and GLI) are also reported.
+    \caption{Optimization trajectories through training cycles. The custom index described in Formula~\ref{optimal_index} was optimized for maximal Pearson's correlation between the vector of its per-plot averages and the phenotype \textit{heading date} \DIFaddbeginFL \DIFaddFL{(here acting as target variable)}\DIFaddendFL . Solid lines show three optimization trajectories on different input images, namely RGB, 10-bands multispectral, and a 14-bands merged image containing RGB, multispectral and temperature data. For reference, the two best performing indices (NDVI and GLI) are also reported.
     \label{fig:optimization_trajectory}
     }
 \end{figure}

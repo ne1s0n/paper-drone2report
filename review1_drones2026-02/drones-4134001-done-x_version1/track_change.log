@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  27 FEB 2026 09:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  27 FEB 2026 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1109,16 +1109,16 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 \DIFdelgraphicsbox=\box81
 \DIFdelgraphicswidth=\skip256
 \DIFdelgraphicsheight=\skip257
-LaTeX Info: Redefining \DIFaddbegin on input line 285.
-LaTeX Info: Redefining \DIFaddend on input line 286.
-LaTeX Info: Redefining \DIFdelbegin on input line 287.
-LaTeX Info: Redefining \DIFdelend on input line 288.
-LaTeX Info: Redefining \DIFaddbeginFL on input line 293.
-LaTeX Info: Redefining \DIFaddendFL on input line 294.
-LaTeX Info: Redefining \DIFdelbeginFL on input line 295.
-LaTeX Info: Redefining \DIFdelendFL on input line 296.
+LaTeX Info: Redefining \DIFaddbegin on input line 289.
+LaTeX Info: Redefining \DIFaddend on input line 290.
+LaTeX Info: Redefining \DIFdelbegin on input line 291.
+LaTeX Info: Redefining \DIFdelend on input line 292.
+LaTeX Info: Redefining \DIFaddbeginFL on input line 297.
+LaTeX Info: Redefining \DIFaddendFL on input line 298.
+LaTeX Info: Redefining \DIFdelbeginFL on input line 299.
+LaTeX Info: Redefining \DIFdelendFL on input line 300.
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 315.
+h' as default language. on input line 319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
@@ -1254,7 +1254,7 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 Package cleveref Info: no abbreviation of names on input line 7852.
 )
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 31
-5.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -1268,24 +1268,24 @@ LaTeX Warning: Label `lst:GLI_function@cref' multiply defined.
 )
 \openout1 = `track_change.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 315.
-LaTeX Font Info:    ... okay on input line 315.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 319.
+LaTeX Font Info:    ... okay on input line 319.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count396
@@ -1302,19 +1302,19 @@ LaTeX Font Info:    ... okay on input line 315.
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 315.
-LaTeX Info: Redefining \microtypecontext on input line 315.
-Package microtype Info: Applying patch `item' on input line 315.
-Package microtype Info: Applying patch `toc' on input line 315.
-Package microtype Info: Applying patch `eqnum' on input line 315.
-Package microtype Info: Applying patch `footnote' on input line 315.
+(lastpage)             ! on input line 319.
+LaTeX Info: Redefining \microtypecontext on input line 319.
+Package microtype Info: Applying patch `item' on input line 319.
+Package microtype Info: Applying patch `toc' on input line 319.
+Package microtype Info: Applying patch `eqnum' on input line 319.
+Package microtype Info: Applying patch `footnote' on input line 319.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 315.
+LaTeX Info: Redefining \showhyphens on input line 319.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1327,7 +1327,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 315.
+or `english'. on input line 319.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1369,7 +1369,7 @@ Package caption Info: End \AtBeginDocument code.
 
 Package newfloat Info: `float' package detected.
 \c@lstlisting=\count402
-Package hyperref Info: Link coloring ON on input line 315.
+Package hyperref Info: Link coloring ON on input line 319.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1378,9 +1378,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count403
 )
-LaTeX Info: Redefining \ref on input line 315.
-LaTeX Info: Redefining \pageref on input line 315.
-LaTeX Info: Redefining \nameref on input line 315.
+LaTeX Info: Redefining \ref on input line 319.
+LaTeX Info: Redefining \pageref on input line 319.
+LaTeX Info: Redefining \nameref on input line 319.
 
 (./track_change.out) (./track_change.out)
 \@outlinefile=\write4
@@ -1395,71 +1395,71 @@ pdf>
 (epstopdf)                    size: 16748 bytes
 (epstopdf)             Command: <repstopdf --outfile=Definitions/logo-updates-e
 ps-converted-to.pdf Definitions/logo-updates.eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 <Definitions/logo-updates-eps-converted-to.pdf, id=64, 223.83624pt x 43.16125pt
 >
 File: Definitions/logo-updates-eps-converted-to.pdf Graphic file (type pdf)
 <use Definitions/logo-updates-eps-converted-to.pdf>
 Package pdftex.def Info: Definitions/logo-updates-eps-converted-to.pdf  used on
- input line 315.
+ input line 319.
 (pdftex.def)             Requested size: 88.53558pt x 17.07182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--315
+Underfull \hbox (badness 10000) in paragraph at lines 319--319
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
-15.
+19.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 3
-15.
+19.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-315.
+319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-315.
+319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-315.
+319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 315.
+(Font)              scaled to size 10.42007pt on input line 319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 315.
+(Font)              scaled to size 7.91925pt on input line 319.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 315.
+(Font)              scaled to size 6.25204pt on input line 319.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 315.
+(Font)              scaled to size 10.42007pt on input line 319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 315.
+(Font)              scaled to size 7.91925pt on input line 319.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 315.
+(Font)              scaled to size 6.25204pt on input line 319.
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-315.
+319.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1473,19 +1473,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 31
-5.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 315.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 319.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/msb/m/n --> U/msb/m/n on input line 315.
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 319.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/msb/m/n --> U/msb/m/n on input line 315.
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 319.
 Package marginnote Info: Margin note 1.1 is on absolute page 1 on input line 31
-5.
-Package marginnote Info: right page because not two side mode on input line 315
+9.
+Package marginnote Info: right page because not two side mode on input line 319
 .
 Package epstopdf Info: Source file: <Definitions/logo-updates.eps>
 (epstopdf)                    date: 2026-02-25 10:13:52
@@ -1496,19 +1496,19 @@ pdf>
 (epstopdf)                    size: 16748 bytes
 (epstopdf)             Command: <repstopdf --outfile=Definitions/logo-updates-e
 ps-converted-to.pdf Definitions/logo-updates.eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 File: Definitions/logo-updates-eps-converted-to.pdf Graphic file (type pdf)
 <use Definitions/logo-updates-eps-converted-to.pdf>
 Package pdftex.def Info: Definitions/logo-updates-eps-converted-to.pdf  used on
- input line 315.
+ input line 319.
 (pdftex.def)             Requested size: 88.53558pt x 17.07182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--315
+Underfull \hbox (badness 10000) in paragraph at lines 319--319
 
  []
 
-Package marginnote Info: xpos seems to be 167.01753pt on input line 315.
+Package marginnote Info: xpos seems to be 167.01753pt on input line 319.
 Package epstopdf Info: Source file: <Definitions/drones-logo.eps>
 (epstopdf)                    date: 2026-02-25 10:13:52
 (epstopdf)                    size: 313466 bytes
@@ -1518,13 +1518,13 @@ df>
 (epstopdf)                    size: 18333 bytes
 (epstopdf)             Command: <repstopdf --outfile=Definitions/drones-logo-ep
 s-converted-to.pdf Definitions/drones-logo.eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 <Definitions/drones-logo-eps-converted-to.pdf, id=69, 361.35pt x 140.525pt>
 File: Definitions/drones-logo-eps-converted-to.pdf Graphic file (type pdf)
 <use Definitions/drones-logo-eps-converted-to.pdf>
 Package pdftex.def Info: Definitions/drones-logo-eps-converted-to.pdf  used on 
-input line 315.
+input line 319.
 (pdftex.def)             Requested size: 87.79544pt x 34.14322pt.
 Package epstopdf Info: Source file: <Definitions/logo-mdpi.eps>
 (epstopdf)                    date: 2026-02-25 10:13:52
@@ -1535,16 +1535,16 @@ Package epstopdf Info: Source file: <Definitions/logo-mdpi.eps>
 (epstopdf)                    size: 13216 bytes
 (epstopdf)             Command: <repstopdf --outfile=Definitions/logo-mdpi-eps-
 converted-to.pdf Definitions/logo-mdpi.eps>
-(epstopdf)             \includegraphics on input line 315.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 <Definitions/logo-mdpi-eps-converted-to.pdf, id=71, 74.2775pt x 49.18375pt>
 File: Definitions/logo-mdpi-eps-converted-to.pdf Graphic file (type pdf)
 <use Definitions/logo-mdpi-eps-converted-to.pdf>
 Package pdftex.def Info: Definitions/logo-mdpi-eps-converted-to.pdf  used on in
-put line 315.
+put line 319.
 (pdftex.def)             Requested size: 42.96877pt x 28.45274pt.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 3
-15.
+19.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1555,16 +1555,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 <Definitions/logo-orcid.pdf, id=73, 102.3825pt x 102.3825pt>
 File: Definitions/logo-orcid.pdf Graphic file (type pdf)
 <use Definitions/logo-orcid.pdf>
-Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 315.
+Package pdftex.def Info: Definitions/logo-orcid.pdf  used on input line 319.
 (pdftex.def)             Requested size: 9.10509pt x 9.10466pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 315.
+(Font)              scaled to size 8.33606pt on input line 319.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 315.
+(Font)              scaled to size 5.21004pt on input line 319.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 315.
+(Font)              scaled to size 8.33606pt on input line 319.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 315.
+(Font)              scaled to size 5.21004pt on input line 319.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1591,7 +1591,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/workflow.png, id=122, 844.58821pt x 597.57582pt>
 File: figs/workflow.png Graphic file (type png)
 <use figs/workflow.png>
-Package pdftex.def Info: figs/workflow.png  used on input line 346.
+Package pdftex.def Info: figs/workflow.png  used on input line 351.
 (pdftex.def)             Requested size: 354.91728pt x 251.1169pt.
 
 
@@ -1604,7 +1604,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3 <./figs/workflow.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-68.
+73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -1628,7 +1628,15 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 383--447
+Overfull \hbox (21.53772pt too wide) in paragraph at lines 446--447
+[][][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|
+   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]
+|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][][]|   [][] 
+
+ []
+
+
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 386--455
 []$[]$ 
  []
 
@@ -1643,7 +1651,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [5] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 448--470
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 456--478
 []$[]$ 
  []
 
@@ -1656,19 +1664,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [6]
-<figs/tobacco.png, id=208, 932.07043pt x 671.68588pt>
+<figs/tobacco.png, id=211, 932.07043pt x 671.68588pt>
 File: figs/tobacco.png Graphic file (type png)
 <use figs/tobacco.png>
-Package pdftex.def Info: figs/tobacco.png  used on input line 489.
+Package pdftex.def Info: figs/tobacco.png  used on input line 497.
 (pdftex.def)             Requested size: 374.63625pt x 269.97122pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 490.
+(Font)              scaled to size 9.37807pt on input line 498.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 490.
+(Font)              scaled to size 7.29405pt on input line 498.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 490.
+(Font)              scaled to size 9.37807pt on input line 498.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 490.
+(Font)              scaled to size 7.29405pt on input line 498.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1679,10 +1687,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [7]
-<figs/gli_histograms.png, id=235, 1045.65656pt x 347.04657pt>
+<figs/gli_histograms.png, id=238, 1045.65656pt x 347.04657pt>
 File: figs/gli_histograms.png Graphic file (type png)
 <use figs/gli_histograms.png>
-Package pdftex.def Info: figs/gli_histograms.png  used on input line 512.
+Package pdftex.def Info: figs/gli_histograms.png  used on input line 520.
 (pdftex.def)             Requested size: 374.63625pt x 124.33827pt.
 
 
@@ -1694,10 +1702,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [8 <./figs/tobacco.png>]
-<figs/barley-fields.png, id=249, 941.01563pt x 299.61937pt>
+<figs/barley-fields.png, id=252, 941.01563pt x 299.61937pt>
 File: figs/barley-fields.png Graphic file (type png)
 <use figs/barley-fields.png>
-Package pdftex.def Info: figs/barley-fields.png  used on input line 522.
+Package pdftex.def Info: figs/barley-fields.png  used on input line 530.
 (pdftex.def)             Requested size: 374.63625pt x 119.28328pt.
 
 
@@ -1718,144 +1726,144 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [10]
-<figs/time-curve-rgb.png, id=279, 782.925pt x 664.73344pt>
+<figs/time-curve-rgb.png, id=282, 782.925pt x 664.73344pt>
 File: figs/time-curve-rgb.png Graphic file (type png)
 <use figs/time-curve-rgb.png>
-Package pdftex.def Info: figs/time-curve-rgb.png  used on input line 590.
+Package pdftex.def Info: figs/time-curve-rgb.png  used on input line 600.
 (pdftex.def)             Requested size: 374.63625pt x 318.08456pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFdelincludegraphics' on input line 595.
+(hyperref)                removing `\DIFdelincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 595.
+(hyperref)                removing `\@ifnextchar' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sout' on input line 595.
+(hyperref)                removing `\sout' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFOincludegraphics' on input line 595.
+(hyperref)                removing `\DIFOincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFaddincludegraphics' on input line 595.
+(hyperref)                removing `\DIFaddincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 595.
+(hyperref)                removing `\@ifnextchar' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uwave' on input line 595.
+(hyperref)                removing `\uwave' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFOincludegraphics' on input line 595.
+(hyperref)                removing `\DIFOincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFdelincludegraphics' on input line 595.
+(hyperref)                removing `\DIFdelincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 595.
+(hyperref)                removing `\@ifnextchar' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sout' on input line 595.
+(hyperref)                removing `\sout' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFOincludegraphics' on input line 595.
+(hyperref)                removing `\DIFOincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFaddincludegraphics' on input line 595.
+(hyperref)                removing `\DIFaddincludegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 595.
+(hyperref)                removing `\@ifnextchar' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uwave' on input line 595.
+(hyperref)                removing `\uwave' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\<let>-command' on input line 595.
+(hyperref)                removing `\<let>-command' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\includegraphics' on input line 595.
+(hyperref)                removing `\includegraphics' on input line 605.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\DIFOincludegraphics' on input line 595.
+(hyperref)                removing `\DIFOincludegraphics' on input line 605.
 
-<figs/dem-height.png, id=282, 1207.51125pt x 433.62pt>
+<figs/dem-height.png, id=285, 1207.51125pt x 433.62pt>
 File: figs/dem-height.png Graphic file (type png)
 <use figs/dem-height.png>
-Package pdftex.def Info: figs/dem-height.png  used on input line 606.
+Package pdftex.def Info: figs/dem-height.png  used on input line 616.
 (pdftex.def)             Requested size: 374.63625pt x 134.53328pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1875,10 +1883,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [12 <./figs/dem-height.png>]
-<figs/trajectories.png, id=306, 722.7pt x 433.62pt>
+<figs/trajectories.png, id=309, 722.7pt x 433.62pt>
 File: figs/trajectories.png Graphic file (type png)
 <use figs/trajectories.png>
-Package pdftex.def Info: figs/trajectories.png  used on input line 637.
+Package pdftex.def Info: figs/trajectories.png  used on input line 650.
 (pdftex.def)             Requested size: 394.35522pt x 236.61264pt.
 
 
@@ -1890,10 +1898,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
 [13 <./figs/trajectories.png>]
-<figs/cs5_training_joined.png, id=325, 505.89pt x 566.5968pt>
+<figs/cs5_training_joined.png, id=328, 505.89pt x 566.5968pt>
 File: figs/cs5_training_joined.png Graphic file (type png)
 <use figs/cs5_training_joined.png>
-Package pdftex.def Info: figs/cs5_training_joined.png  used on input line 658.
+Package pdftex.def Info: figs/cs5_training_joined.png  used on input line 671.
 (pdftex.def)             Requested size: 315.48538pt x 353.35268pt.
 
 
@@ -1904,10 +1912,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
-[14 <./figs/cs5_training_joined.png>]
+[14]
 
 LaTeX Font Warning: Font shape `T1/ppl/m/scit' undefined
-(Font)              using `T1/ppl/m/sc' instead on input line 672.
+(Font)              using `T1/ppl/m/sc' instead on input line 685.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1917,7 +1925,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
-[15]
+[15 <./figs/cs5_training_joined.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 20.40002pt, for example:
@@ -1944,7 +1952,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
-[18] 
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 20.40002pt, for example:
+(fancyhdr)                \setlength{\headheight}{20.40002pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
+
+[19] 
 AED: lastpage setting LastPage
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1954,7 +1971,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-8.40002pt}.
 
-[19] (./track_change.aux)
+[20] (./track_change.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1962,13 +1979,13 @@ Package rerunfilecheck Info: File `track_change.out' has not changed.
 (rerunfilecheck)             Checksum: 1CCDABE8F4934F44E6B8E1D34E574824;3309.
  ) 
 Here is how much of TeX's memory you used:
- 37354 strings out of 480171
- 687994 string characters out of 5894490
- 1258703 words of memory out of 5000000
+ 37369 strings out of 480171
+ 688146 string characters out of 5894490
+ 1274245 words of memory out of 5000000
  53888 multiletter control sequences out of 15000+600000
- 560938 words of font info for 527 fonts, out of 8000000 for 9000
+ 561511 words of font info for 535 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 123i,14n,120p,1608b,1497s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 123i,13n,120p,1631b,1497s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/nelson/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.60
 0pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/nelson/.
 texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0500.600pk></usr/share/te
@@ -1981,10 +1998,10 @@ pe1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pala
 tino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on track_change.pdf (19 pages, 4166333 bytes).
+Output written on track_change.pdf (20 pages, 4170970 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 138 named destinations out of 1000 (max. 500000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 142 named destinations out of 1000 (max. 500000)
  120505 words of extra memory for PDF output out of 128383 (max. 10000000)
 
