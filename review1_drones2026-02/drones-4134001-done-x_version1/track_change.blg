@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: track_change.aux
+The style file: Definitions/mdpi.bst
+I found no \bibdata command---while reading file track_change.aux
+Warning--I didn't find a database entry for "machwitz2021bridging"
+Warning--I didn't find a database entry for "moyroud2018introduction"
+Warning--I didn't find a database entry for "tang2024grabseeds"
+Warning--I didn't find a database entry for "loarca2024berryportraits"
+Warning--I didn't find a database entry for "park2022deep"
+Warning--I didn't find a database entry for "noauthor_welcome_nodate"
+Warning--I didn't find a database entry for "rupnik2017micmac"
+Warning--I didn't find a database entry for "GDALmanual"
+Warning--I didn't find a database entry for "kelsey_jordahl_2020_3946761"
+Warning--I didn't find a database entry for "louhaichi2001spatially"
+Warning--I didn't find a database entry for "hamuda2016survey"
+Warning--I didn't find a database entry for "mathieu1998relationships"
+Warning--I didn't find a database entry for "meyer2008verification"
+Warning--I didn't find a database entry for "henrich2012entwicklung"
+Warning--I didn't find a database entry for "2020SciPy-NMeth"
+Warning--I didn't find a database entry for "nelder1965simplex"
+Warning--I didn't find a database entry for "Peccia_2018"
+Warning--I didn't find a database entry for "he2016deep"
+Warning--I didn't find a database entry for "chollet2015keras"
+Warning--I didn't find a database entry for "tanaka_review_2024"
+Warning--I didn't find a database entry for "gano2024drone"
+Warning--I didn't find a database entry for "gano_dronebased_2024"
+Warning--I didn't find a database entry for "sharma2021development"
+Warning--I didn't find a database entry for "vacca2020web"
+Warning--I didn't find a database entry for "noauthor_orfeo_nodate"
+Warning--I didn't find a database entry for "grizonnet_orfeo_2017"
+Warning--I didn't find a database entry for "dobesova2020evaluation"
+Warning--I didn't find a database entry for "noauthor_plantcv_2021"
+Warning--I didn't find a database entry for "varghese2024yolov8"
+Warning--I didn't find a database entry for "matias_fieldimager_2020"
+Warning--I didn't find a database entry for "ChenZhang2020"
+Warning--I didn't find a database entry for "itoh2024preps"
+Warning--I didn't find a database entry for "wang2024ihup"
+Warning--I didn't find a database entry for "candiago2015evaluating"
+Warning--I didn't find a database entry for "radovcaj2023state"
+Warning--I didn't find a database entry for "velez2023beyond"
+You've used 0 entries,
+            2887 wiz_defined-function locations,
+            596 strings with 4548 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 12
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
+purify$ -- 0
+quote$ -- 0
+skip$ -- 0
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)
