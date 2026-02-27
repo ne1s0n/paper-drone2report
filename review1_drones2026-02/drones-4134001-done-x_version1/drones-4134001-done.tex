@@ -252,7 +252,9 @@ In this paper, we present the technical details of this new tool, followed by fo
 The general workflow of \textsc{drone2report} is reported in Figure~\ref{fig:workflow}. 
 We adopt here the following definitions: orthophotos (or orthorectified images) are single drone-captured images that have been geometrically corrected (perspective, camera tilt etc.), while orthomosaics are collection of orthophotos stitched together (taking care of overlaps etc.) \cite{park2022deep}.
 The first step is data acquisition, with the drone(s) flying over the field of interest and collecting a series of overlapping images, which are then collated together into an orthomosaic. This computational step produces a georeferenced composite image and corrects for several technical issues such as perspective distortion, map projection, and lens aberrations.
-The generation of orthophotos and orthomosaics is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and Agisoft Metashape version 1.6.4 (Agisoft LLC., St. Petersburg, Russia), for orthorectiphication . Together with the orthomosaic image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
+The generation of orthophotos and orthomosaics is now considered a well-established process, thanks to the availability of mature open-source tools such as OpenDroneMap \cite{noauthor_welcome_nodate}, MicMac \cite{rupnik2017micmac}, and COLMAP\cite{schoenberger2016sfm}. 
+%and Agisoft Metashape version 1.6.4 (Agisoft LLC., St. Petersburg, Russia), for orthorectiphication . 
+Together with the orthomosaic image (typically in the .tif format), a digital elevation model (DEM) file is also produced, which describes the three-dimensional structure of the field.
 
 \begin{figure}[H]
 %    \centering
@@ -485,7 +487,7 @@ The evolution of per-plot average heights over time is reported in Figure~\ref{f
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=0.95\linewidth]{figs/dem-height.png}
-    \caption{Example .dem file of a barley field (left: flight on 19/04/2024); plant height (metres) calculated from the .dem file by drone2report, over 10 flights covering the growing season (right; the dates fo the 10 flights are the same as in Figure~\ref{fig:time-curves}).}
+    \caption{Example .dem file of a barley field (left: flight on 19/04/2024); plant height (metres) calculated from the .dem file by drone2report, over 10 flights covering the growing season (right; the dates for the 10 flights are the same as in Figure~\ref{fig:time-curves}).}
     \label{fig:dem-height}
 \end{figure}
 
@@ -827,6 +829,19 @@ Accessed 2025-08-27
 \bfpage{14}
 (\byear{2017})
 \end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem[\protect\citeauthoryear{Sch\"{o}nberger et~al.}{2016}]{schoenberger2016sfm}
+\begin{bbook}
+\bauthor{\bsnm{Sch\"{o}nberger}, \binits{J.L.}},
+\bauthor{\bsnm{Frahm}, \binits{J.M.}}:
+\batitle{Structure-from-Motion Revisited}.
+\bjtitle{Conference on Computer Vision and Pattern Recognition (CVPR)}
+%\bvolume{2}(\bissue{1}),
+%\bfpage{14}
+(\byear{2016})
+\end{bbook}
 \endbibitem
 
 %%% 7
