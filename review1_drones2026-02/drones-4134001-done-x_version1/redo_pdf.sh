@@ -7,6 +7,6 @@ rm -f $FILE.aux $FILE.dvi $FILE.log $FILE.idx $FILE.ind $FILE.toc $FILE.ilg $FIL
 
 #doing the usual latex routine
 pdflatex $FILE
-bibtex $FILE
+#bibtex $FILE
 pdflatex $FILE
 pdflatex $FILE
