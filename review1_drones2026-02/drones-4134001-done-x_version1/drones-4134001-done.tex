@@ -371,12 +371,12 @@ In the first case study we use \textsc{drone2report} to calculate a vegetation i
 In this example we compute the Green Leaf Index (GLI, see Formula~\ref{formula:GLI_index}), whose positive values tend to identify green vegetation (e.g. leaves and stems), while negative values tend to reflect soil/non-vegetation \cite{louhaichi2001spatially}. 
 Our objective might be to calculate the proportion of vegetation to soil, or to compare the green intensity of different fields or over time. In both cases, we may want to remove the image background (i.e. ``noise'', like a road, a pond or just bare soil) which can be achieved via thresholding \cite{hamuda2016survey}.
 
-To illustrate the removal of background noise, we use one RGB image of tobacco leaves from the Github repository (\url{https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS}) of the \textsc{GRABSEED} software \cite{tang2024grabseeds} (Figure~\ref{fig:tobacco-leaves})
+To illustrate the removal of background noise, we first use one RGB image of tobacco leaves from the Github repository (\url{https://github.com/tanghaibao/jcvi/wiki/GRABSEEDS}) of the \textsc{GRABSEED} software \cite{tang2024grabseeds} (Figure~\ref{fig:tobacco-leaves})
 
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=0.95\linewidth]{figs/tobacco.png}
-    \caption{Example RGB image of tobacco leaves (\textit{Nicotiana tabacum}). A) The original image of the tobacco leaves as downloaded from \url{https://www.dropbox.com/s/is4jrmlmmcfdpdp/test-data.zip?dl=1}; B) The same image with threshold 0.1: the pixels highlighted in turquoise are those that will be used for the calculations of the vegetation indices.}
+    \caption{Example RGB image of tobacco leaves (\textit{Nicotiana tabacum}). A) The original image of the tobacco leaves as downloaded from \url{https://www.dropbox.com/s/is4jrmlmmcfdpdp/test-data.zip?dl=1}; B) The same image with threshold 0.1: the pixels highlighted in turquoise are those that will be used by \textsc{DRONE2REPORT} for the calculations of the vegetation indices.}
     \label{fig:tobacco-leaves}
 \end{figure}
 
@@ -391,8 +391,7 @@ In this example, our objective is to calculate the GLI vegetation index for the 
 
 where $\textbf{p} := [p_{red}, p_{green}, p_{blue}]$ is a single pixel of an RGB image and contains the normalized intensities of the three channels.
 
-
-With reference to Figure~\ref{fig:tobacco-leaves}, the aim is to remove the background table (brownish) and the light-blue paper-cloth from the calculation. As a first step, we computed GLI on the image and obtained the distribution reported in Figure~\ref{fig:gli}. The image highlights two clear clusters, one around zero, the other larger than 0.2. These two groups correspond to the non-leaf background and to the tobacco leaves, with different intensities of green. Thus, a threshold of 0.1 would separate the two clusters. This value is incorporated when invoking \textsc{drone2report} [TASK index]. 
+With reference to Figure~\ref{fig:tobacco-leaves}, the aim is to remove the background table (brownish) and the light-blue paper-cloth from the calculation. As a first step, we computed GLI on the image and obtained the distribution reported in Figure~\ref{fig:gli} (A). The image highlights two clear clusters, one around zero, the other larger than 0.2. These two groups correspond to the non-leaf background and to the tobacco leaves, with different intensities of green. Thus, a threshold of 0.1 would separate the two clusters. This value is incorporated when invoking \textsc{drone2report} [TASK index]. 
 We obtain a resulting GLI average value of $0.289 \pm 0.07$, calculated only from the leaves.
 If we apply the same procedure to other images of tobacco leaves, we can then compare the corresponding GLI values.
 
@@ -418,14 +417,14 @@ We used \textsc{drone2report} [TASK thumbnail] to generate copies of the origina
 We then calculated the GLI index using only the pixels above the threshold, from the original image (no threshold, all pixels used), to the maximum 0.9 threshold. The \textsc{drone2report} [TASK index] was used for index calculations, each time specifying the corresponding threshold (if any). 
 Results are shown in Table~\ref{tab:index-thresholds}.
 
-We see that the number of pixels used decreases with the threshold used. Not surprisingly, given that GLI measures the green intensity of pixels in the image, GLI values increase with the threshold, from 0.26 to 0.93: essentially, since Figure~\ref{fig:base-field-plot} (A) is a barley field, we are progressively getting rid of the soil and of the less green parts of the plants. 
+We see that the number of pixels used decreases with the threshold applied. Not surprisingly, given that GLI measures the green intensity of pixels in the image, GLI values increase with the threshold, from 0.26 to 0.93: essentially, since Figure~\ref{fig:base-field-plot} (A) is a barley field, we are progressively getting rid of the soil and of the less green parts of the plants. 
 Depending on the application, it may be desirable to focus only on vegetation, or even on the plants' greenest parts. In contrast, it may be acceptable to remove only pixels with negative GLI values (GLI $> 0.0$), which are definitely not green. This is reported in Table~\ref{tab:index-thresholds}, second row.
 
-Note that in these examples, for simplicity, we applied thresholding on the same index that was computed. However, it is possible to threshold the image based on one index and then compute one (or more) other indices on the retained pixels in a single pass. Moreover, it is also possible to specify more complex thresholding, e.g. banding, such as $(\text{GLI} > 0) \wedge (\text{GLI} < 0.8)$. In all cases, the evaluation of different index values and the selection of the best threshold is not automated in \textsc{drone2report}.
+Note that in these examples, for simplicity, we applied thresholding on the same index to be computed. However, it is possible to threshold the image based on one index and then compute one, or more, other indices on the retained pixels in a single pass. Moreover, it is also possible to specify more complex thresholding, e.g. banding, such as $(\text{GLI} > 0) \wedge (\text{GLI} < 0.8)$. In all cases, the evaluation of different index values and the selection of the best threshold is not automated in \textsc{drone2report}.
 
 \begin{table}[H]
 \small
-\caption{An example of reporting table produced by \textsc{drone2report}: green leaf index (GLI) values with different thresholding, as computed by [TASK index]. For each Region Of Interest (as defined in the shapefile) a set of summary statistics is computed for each index (mean, standard deviation, min and max). after\_th: n. of pixels left for the calculation after thresholding. Note that with this settings the last column (GLI\_min) strictly reflects the progression of thresholding.}
+\caption{An example of reporting table produced by \textsc{drone2report}: green leaf index (GLI) values with different thresholding, as computed by [TASK index]. For each Region Of Interest (as defined in the shapefile) a set of summary statistics is computed for each index (mean, standard deviation, min and max). after\_th: n. of pixels left for the calculation after thresholding. Note that with these settings the last column (GLI\_min) strictly reflects the progression of thresholding.}
 \label{tab:index-thresholds}
 \begin{tabular}{lllllllll}
 
@@ -459,7 +458,7 @@ In this illustration, drone-captured barley-field images from the same experimen
 However, instead of using one single-plot image (one single barley variety) at one single timepoint, the images selected for this case study cover 20 plots (20 barley varieties) over 10 flights. Flights were performed in Fiorenzuola d'Arda 
 (Italy, $44^\circ 55'40.2466'', 009^\circ53'42.4730''$)
 between Feb 19, 2024 (first flight on empty field) and June 12, 2024 (tenth flight).
-As vegetation indices, we use GLI (described before, see Formula~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}, defined as:
+As vegetation indices, we use GLI (described before, see Equation~\ref{formula:GLI_index}) and HUE~\cite{mathieu1998relationships}, defined as:
 
 \begin{equation}
 \label{formula:HUE}
@@ -488,7 +487,7 @@ As mentioned before, drone phenotyping produces also a DEM file alongside the or
 DEM files report the height of each pixel in the orthomosaic image: this height is usually reported in meters, and is measured from a reference ellipsoid. 
 Given that the first flight is usually performed on an empty field, it can be used as reference. By subtracting the heights of the first flight from all successive flights, it is possible to estimate plant growth.
 
-In Figure~\ref{fig:dem-height}, A, a hill-shade rendering of a DEM file for the example barley field is reported (part of it), to visualize the 3D structure of the field image. Pixel heights will differ depending on the content, being soil, an erect plant, or a lodged one. 
+In Figure~\ref{fig:dem-height} (A), a hill-shade rendering of a DEM file for the example barley field is reported (part of it), to visualize the 3D structure of the field image. Pixel heights will differ depending on the content, being soil, an erect plant, or a lodged one. 
 The evolution of per-plot average heights over time is reported in Figure~\ref{fig:dem-height} (B) for the successive flights. Note that the very first flight is used as reference and thus all pixels are zero by definition.
 
 \begin{figure}[H]
