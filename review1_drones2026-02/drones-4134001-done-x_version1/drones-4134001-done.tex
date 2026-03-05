@@ -402,7 +402,7 @@ If we apply the same procedure to other images of tobacco leaves, we can then co
     \label{fig:gli}
 \end{figure}
 
-In a more realistic case the GLI values clusters from different segments of the image may not be as clear as in the tobacco-leaves example. An example is reported in Figure~\ref{fig:base-field-plot}, panel A: a drone-captured RGB image (camera: DJI Mavic 3 Enterprise) of a single plot from a barley field in Fiorenzuola d’Arda (PC), Italy, $44^{\circ} 55' 27'' N, 9^{\circ}54'47'' E$, taken on March 25th 2024 (``Polyploidbreeding'' research project: \url{https://polyploidbreeding.ibba.cnr.it/}).
+In a more realistic case the GLI values clusters from different segments of the image may not be as clear as in the tobacco-leaves example. An example is reported in Figure~\ref{fig:base-field-plot}, panel A: a drone-captured RGB image (camera: DJI Mavic 3 Enterprise; resolution: 0.33 cm/pixel; overlap: 80\%; sidelap: 80\%) of a single plot from a barley field in Fiorenzuola d’Arda (PC), Italy, $44^{\circ} 55' 27'' N, 9^{\circ}54'47'' E$, taken on March 25th 2024 (``Polyploidbreeding'' research project: \url{https://polyploidbreeding.ibba.cnr.it/}).
 For this image, the distribution of GLI index values is unimodal (no clusters: Figure~\ref{fig:gli}, panel B).
 
 \begin{figure}[H]
@@ -511,7 +511,7 @@ From the DEM files also the per-plot volumes can be estimated using \textsc{dron
 
 The resulting data structure exposes, for each pixel, a number of channels equal to the sum of all channels of the original images. Thus, it is possible to leverage different data sources together and transparently.
 
-In this case study three images are merged: one RGB (three bands), one multispectral (ten bands) and one thermal (one band). All images are of a barley field close to harvesting time. The field is structured in 264 plots, each phenotyped for heading date, i.e. the number of days from sowing when the spike (head) has emerged from the flag leaf sheath in 50\% of the plants in a plot. The aim of of this case study is to optimize a new vegetation index of the form:
+In this case study three images are merged: one RGB (three bands; camera described in Case Study n. 1), one multispectral (ten bands; camera: DJI Matrice 300 RTK with Micasense Dual Camera System sensor; resolution: 0.83 cm/pixel; overlap: 80\%; sidelap: 80\%) and one thermal (one band; camera: DJI Mavic 3 Enterprise Thermal; resolution: 1.57 cm/pixel; overlap: 68\%; sidelap: 90\%). All images are of a barley field close to harvesting time. The field is structured in 264 plots, each phenotyped for heading date, i.e. the number of days from sowing when the spike (head) has emerged from the flag leaf sheath in 50\% of the plants in a plot. The aim of of this case study is to optimize a new vegetation index of the form:
 
 \begin{equation}
 \label{optimal_index}
