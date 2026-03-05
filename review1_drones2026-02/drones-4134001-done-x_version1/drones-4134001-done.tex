@@ -240,14 +240,14 @@ These examples demonstrate the tool’s ability to automate analysis, integrate 
 %\maketitle
 \section{Introduction}
 \label{intro}
-Advances in precision agriculture and plant phenotyping increasingly rely on high-throughput, non-destructive methods for measuring crop performance under field conditions. Remote sensing platforms have become central to this effort, providing quantitative information on canopy structure, physiology, and stress responses. Among them, unmanned aerial vehicles (UAVs, or drones) are especially attractive due to their flexibility, affordability, and ability to generate repeated observations at plot or field scale. UAV-mounted sensors—ranging from RGB cameras to multispectral, thermal, and LIDAR (Laser Imaging, Detection, And Ranging) units—enable detailed measurement of vegetation indices, canopy temperature, and topography that can inform breeding programs and management decisions \cite{machwitz2021bridging}.
+Advances in precision agriculture and plant phenotyping increasingly rely on high-throughput, non-destructive methods for measuring crop performance under field conditions. Remote sensing platforms have become central to this effort, providing quantitative information on canopy structure, physiology, and stress responses. Among these, unmanned aerial vehicles (UAVs, or drones) are especially attractive due to their flexibility, affordability, and ability to generate repeated observations at plot or field scale. UAV-mounted sensors—ranging from RGB cameras to multispectral, thermal, and LIDAR (Laser Imaging, Detection And Ranging) units—enable detailed measurement of vegetation indices, canopy temperature and topography that can inform breeding programs and management decisions \cite{machwitz2021bridging}.
 
 Although the potential of UAV imagery for plant science is well recognized, the software ecosystem supporting its analysis remains fragmented. Many researchers rely on commercial photogrammetry suites for orthomosaic production, followed by manual processing in GIS software or custom scripts for index calculation and region-of-interest (ROI) extraction. This workflow can be labor-intensive, error-prone, and difficult to reproduce across experiments or research groups. Existing open-source solutions are usually not designed for agriculture applications (\cite{moyroud2018introduction}), have sometimes very specific targets (e.g. seeds \cite{tang2024grabseeds}, berries \cite{loarca2024berryportraits}), focus on single data types (e.g. RGB or multispectral), provide limited support for multi-modal datasets, or lack transparent configuration and automation mechanisms. 
 
 As UAV datasets grow in size and complexity, there is a growing need for tools that combine reproducibility, flexibility, and ease of use, while remaining accessible to plant researchers without advanced programming expertise.
 \textsc{drone2report} was developed to address this gap. It is designed specifically for agriculture (\textit{e.g.} a field with multiple plots each accommodating one genotype) and implements a configuration-driven pipeline that streamlines the transformation of UAV imagery into standardized outputs—such as vegetation indices, ROI-based statistics, and summary reports—across multiple sensor types. By emphasizing reproducibility, modularity, and compatibility with common research workflows, \textsc{drone2report} aims to lower the barrier to adoption of UAV-based phenotyping and facilitate robust comparisons across experiments, genotypes, and environments. 
 %The software is released under open-source license and readily available at \url{https://github.com/ne1s0n/drone2report}. 
-In this paper, we present the technical details of this new tool, followed by four case-studies describing examples of its application, a comparison with other available software packages, and a discussion of the merits, limitations and future expansions of \textsc{drone2report}.
+In this paper, we present the technical details of this new tool, followed by five case-studies describing examples of its application, a comparison with other available software packages, and a discussion of the merits, limitations and future expansions of \textsc{drone2report}.
 
 \section{Methods}
 \label{methods}
@@ -277,7 +277,7 @@ One \textit{dataset} can thus be composed of several orthophotos, and several \t
 
 \subsection{Software Implementation}
 
-\textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed to agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
+\textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed for agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
 
 An example configuration (.ini) file is provided in Listing~\ref{lst:config}, demonstrating how to compute two vegetation indices from a single RGB image.
 The basic structure of the configuration file includes three main sections: i) DEFAULT specifies base parameters like the input and output folders, the number of cores (processing units) to be used, and whether a verbose output log is desired; ii) DATA specifies the image file name (with some metadata, i.e. date, description etc.), its type (only tif\_multichannel is currently supported), the value that indicates missing pixel data (e.g. $-1$), the channels (total and visible), the maximum pixel intensity value, the path to the shape file; iii) TASK specifies which vegetation indices will be computed. 
@@ -286,8 +286,7 @@ Once the configuration file is ready, \textsc{drone2report} will be run from the
 
 The modularity of \textsc{drone2report} can be leveraged at several levels. The easiest customization would be to add new specialized vegetation indices to the proper python file (e.g. \verb|matrix_returning_indices.py| file in the folder \verb|/drone2report/d2r/tasks/| from the github repository). Listing~\ref{lst:GLI_function} reports an example of such a function.
 
-A more powerful intervention consists of designing a new TASK, which will then require its own section in the .ini file. For that purpose, a TASK template is provided. Finally, new types of DATA could be supported, which would require some care to curate the exposed functionalities.
-
+A more powerful intervention consists of designing a new TASK, which will then require its own section in the .ini file. For that purpose, a TASK template is provided in the documentation of the tool. Finally, new types of DATA could be supported, which would require some care to curate the exposed functionalities.
 
 New indices and functionality can be proposed and eventually integrated in the main software codebase via Github pull requests.
 
@@ -295,7 +294,7 @@ Note that \textsc{drone2report} anticipates the most common needs of agricultura
 
 Internally, \textsc{drone2report} uses the GDAL \cite{GDALmanual} and geopandas \cite{kelsey_jordahl_2020_3946761} libraries for manipulation of georeferenced images. \textsc{drone2report} is released with a custom Conda environment for multi-platform installation.
 
-The \textsc{drone2report} open-source code is available on-line in the following Github repository: \url{https://github.com/ne1s0n/drone2report}.
+The \textsc{drone2report} open-source code is available on-line at the following Github repository: \url{https://github.com/ne1s0n/drone2report}.
 
 \begin{minipage}{\hsize}%
 \lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=bash}% Set your language (you can change the language for each code-block optionally)
