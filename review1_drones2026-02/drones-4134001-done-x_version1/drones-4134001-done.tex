@@ -518,24 +518,21 @@ In this case study three images are merged: one RGB (three bands), one multispec
 I(\textbf{p}) = \frac{n_0 + \sum_{i=1}^{14} n_i p_i}{d_0 + \sum_{i=1}^{14} d_i p_i}
 \end{equation}
 
-where $\textbf{p} \in \mathbb{R}^{14}$ is a pixel on the merged 14-bands image. The set of 30 coefficients $[n_0, ..., n_{14}, d_0, ..., d_{14}]$ are to be chosen to maximize the Pearson's correlation between the array of per-plot average index values and the target variable (heading dates, collected in a 264-cells array). Formula~\ref{optimal_index} is designed as a generalization of the most commonly used indices. In fact, indices such as NDVI, GLI and VARI \cite{henrich2012entwicklung} can all be derived as special combinations of the $d_i, n_i$ coefficients.
+where $\textbf{p} \in \mathbb{R}^{14}$ is a pixel on the merged 14-bands image. The set of 30 coefficients $[n_0, ..., n_{14}, d_0, ..., d_{14}]$ are to be chosen to maximize the Pearson's correlation between the array of per-plot average index values and the target variable. Formula~\ref{optimal_index} is designed as a generalization of the most commonly used indices. In fact, indices such as NDVI, GLI and VARI \cite{henrich2012entwicklung} can all be derived as special combinations of the $d_i, n_i$ coefficients.
 
-This thus becomes a 30-parameters optimization problem, which can be solved via a new custom \textsc{drone2report} task. Internally, the task uses \texttt{Scipy}'s \cite{2020SciPy-NMeth} \textit{optimize.minimize()} function based on the \textit{Nelder-Mead} numerical method \cite{nelder1965simplex}. The results of the optimization process are reported in Figure~\ref{fig:optimization_trajectory}, which shows the optimization trajectory of the custom index in equation~\ref{optimal_index} through all training iterations. The index was optimized on the merged 14-bands image and, for comparison, on both the visible RGB image and the 10-bands multispectral image, separately. For reference, on the 3-bands RGB image the number of coefficients becomes eight, on the multispectral image it becomes 22.
-Additionally, the plot also reports the Pearson's correlation with heading date for the two best performing vegetation indices among the twenty one currently implemented in \textsc{drone2report}, namely NDVI (Normalized Difference Vegetation Index, for multispectral images) and GLI (Green Leaf Index, for RGB images).
+This thus becomes a 30-parameters optimization problem, which can be solved via a new custom \textsc{drone2report} task. Internally, the task uses \texttt{Scipy}'s \cite{2020SciPy-NMeth} \textit{optimize.minimize()} function based on the \textit{Nelder-Mead} numerical method \cite{nelder1965simplex}. 
+
+The dataset, consisting of 264 plots and their corresponding heading dates, was split in training set (80\% of the data) and validation set (20\% of the data). The results of the optimization process are reported in Figure~\ref{fig:optimization_trajectory}, which shows the optimization trajectory of the custom index in equation~\ref{optimal_index} through all training iterations. Additionally, the plot also reports the Pearson's correlation with heading date for the two best performing vegetation indices among the twenty one currently implemented in \textsc{drone2report}, namely NDVI (Normalized Difference Vegetation Index, for multispectral images) and GLI (Green Leaf Index, for RGB images).
+
+Notice how the correlation on the validation set trails below the values computed on the training set. At some point, just before iteration 250, the correlation on the validation set drops, while on the training set continues to rise. This is expected, and it's a clear symptom of overfitting. This can easily be contrasted by a number of techniques, e.g. Early Stopping~\cite{yao2007early}, that can intercept the sudden drop on the validation set and stop the training process. Alternatively, the set of parameters maximizing correlation on the validation set can be extracted from the training log. In this second case the training will continue to run until the optimizer's convergence criteria are met.
 
 \begin{figure}[H]
 %    \centering
     \includegraphics[width=1\linewidth]{figs/trajectories.png}
-    \caption{Optimization trajectories through training cycles. The custom index described in Formula~\ref{optimal_index} was optimized for maximal Pearson's correlation between the vector of its per-plot averages and the phenotype \textit{heading date} (here acting as target variable). Solid lines show three optimization trajectories on different input images, namely RGB, 10-bands multispectral, and a 14-bands merged image containing RGB, multispectral and temperature data. For reference, the two best performing indices (NDVI and GLI) are also reported.
+    \caption{Optimization trajectories through training cycles. The custom index described in Formula~\ref{optimal_index} was optimized for maximal Pearson's correlation between the vector of its per-plot averages and the phenotype \textit{heading date} (here acting as target variable). The color indicates if the values refers to the correlation on the training or validation set. For reference, the two best performing indices (NDVI and GLI) are also reported.
     \label{fig:optimization_trajectory}
     }
 \end{figure}
-
-The results show that it is possible to optimize a custom vegetation index on a specific drone dataset and beat the correlations of standard indices. The optimization process is iterative and stochastic, so different images required different amounts of iteration before converging. Optimizing on the RGB image required little more than two hundred iterations, while on the 14-bands merged image it required 1148 iterations. These numbers would change if the process were repeated and are influenced by the initialization process, which assigns random values to the parameters. However, in general a longer optimization process is expected the more parameters are to be tuned.
-
-The indices obtained with this case study are likely overfitting, at least partially. 
-
-A focused, future study, could estimate the fraction of overfitting and apply regularization techniques to ensure good generalization of the results.
 
 \subsection{Case Study N. 5: Deep Learning for Image Classification}
 \label{dl-classification}
@@ -1323,8 +1320,21 @@ Accessed 2025-08-27
 \end{barticle}
 \endbibitem
 
-\end{thebibliography}
+%%% 36
+\bibitem[\protect\citeauthoryear{Yao et~al.}{2007}]{yao2007early}
+\begin{barticle}
+\bauthor{\bsnm{Yao}, \binits{Y.}},
+\bauthor{\bsnm{Rosasco}, \binits{L.}},
+\bauthor{\bsnm{Caponnetto}, \binits{A.}},
+\batitle{On early stopping in gradient descent learning}.
+\bjtitle{Constructive approximation}
+\bvolume{26}(\bissue{2}),
+\bfpage{289}--\blpage{315}
+(\byear{2007})
+\end{barticle}
+\endbibitem
 
+\end{thebibliography}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \PublishersNote{}
