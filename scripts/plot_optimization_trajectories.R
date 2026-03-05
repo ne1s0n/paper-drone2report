@@ -21,16 +21,16 @@ df = rbind(df,
 
 # PLOT --------------------------------------------------------------------
 p = ggplot(data = df, aes(x=cycle, y=correlation, color = set)) + 
-  geom_line() + scale_color_manual(values=c('red', 'blue')) +
+  geom_line(linewidth = 1) + scale_color_manual(values=c('red', 'blue')) +
   xlab('Training iterations') + ylab('Correlation with\nheading date') + 
   geom_hline(yintercept = 0.109, colour = 'grey30', linewidth = 0.5, linetype = 3) + 
   geom_hline(yintercept = 0.135, colour = 'grey30', linewidth = 0.5, linetype = 3) +
-  annotate('label', x=400, y=0.109, label = 'NDVI (multispectral)', color = 'grey30', hjust = 'right') +
-  annotate('label', x=400, y=0.135,  label = 'GLI (RGB)', color = 'grey30', hjust = 'right') +
+  annotate('label', x=400, y=0.109, label = 'NDVI (multispectral)', color = 'grey30', hjust = 'right', size = 5) +
+  annotate('label', x=400, y=0.135, label = 'GLI (RGB)'           , color = 'grey30', hjust = 'right', size = 5) +
   theme_classic() + 
   theme(axis.title = element_text(face='bold', size = 18),
         axis.text = element_text(size = 15),
-        legend.position = 'bottom')
+        legend.position = 'bottom', legend.title = element_text(size=15), legend.text =  element_text(size=15))
 print(p)
 ggsave(
   filename = 'figures_tables/trajectories.png', 
