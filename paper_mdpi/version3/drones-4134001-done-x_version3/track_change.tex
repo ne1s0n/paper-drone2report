@@ -1,7 +1,7 @@
 %Version 3 December 2023
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ../drones-4134001-done-x_version1/drones-4134001-done.tex   Thu Mar  5 16:10:34 2026
-%DIF ADD drones-4134001-done.tex                                     Thu Mar 19 11:09:53 2026
+%DIF DEL ../drones-4134001-done-x_version2/drones-4134001-done.tex   Tue Mar 24 12:22:30 2026
+%DIF ADD drones-4134001-done.tex                                     Tue Mar 24 12:27:47 2026
 % See section 11 of the User Manual for version history
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,9 +127,11 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-\Title{\textsc{drone2report}: A Configuration-Driven Multi-Sensor Pipeline for UAV-Based Crop Phenotyping and Precision Agriculture}
-
-
+%DIF 127c127
+%DIF < \Title{\textsc{drone2report}: A Configuration-Driven Multi-Sensor Pipeline for UAV-Based Crop Phenotyping and Precision Agriculture}
+%DIF -------
+\Title{\textsc{drone2report}: A Configuration-Driven Multi-Sensor batch processing engine for UAV-Based plot analysis in Precision Agriculture} %DIF > 
+%DIF -------
 
 %\title[Article Title]{\textsc{drone2report}: a configuration-driven multi-sensor pipeline for UAV-based crop phenotyping and precision agriculture}
 
@@ -214,11 +216,7 @@ $^{5}$ \quad Research \& Development, SIS - Società Italiana Sementi, {Via Mira
 
 \abstract{Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthophotos into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups.
 
-%DIF 214c214
-%DIF < We present \textsc{drone2report}, an open-source python-based software that processes orthophotos/orthomosaics from UAV flights to generate vegetation indices, summary statistics and derived subimages, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging or the falling over of spikes; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task.
-%DIF -------
-We present \textsc{drone2report}, an open-source python-based software that processes orthophotos/orthomosaics from UAV flights to generate vegetation indices, summary statistics, derived subimages and, text (html) reports, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging or the falling over of spikes; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task. %DIF > 
-%DIF -------
+We present \textsc{drone2report}, an open-source python-based software that processes orthophotos/orthomosaics from UAV flights to generate vegetation indices, summary statistics, derived subimages and, text (html) reports, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging or the falling over of spikes; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task.
 These examples demonstrate the tool’s ability to automate analysis, integrate heterogeneous data and models, and support reproducible computation of agronomically relevant traits.
 
 \textsc{drone2report}  streamlines UAV image processing for precision agriculture by linking orthophoto data to standardized, plot-level outputs. Its modular, configuration-driven design allows transparent workflows, easy customization, and integration of multiple sensors within a unified analytical framework. By facilitating reproducible, multi-modal image analysis, \textsc{drone2report} lowers technical barriers to UAV-based phenotyping and opens the way to robust, data-driven crop monitoring and breeding applications.
@@ -325,7 +323,7 @@ These examples demonstrate the tool’s ability to automate analysis, integrate 
 %\maketitle
 \section{Introduction}
 \label{intro}
-Advances in precision agriculture and plant phenotyping increasingly rely on high-throughput, non-destructive methods for measuring crop performance under field conditions. Remote sensing platforms have become central to this effort, providing quantitative information on canopy structure, physiology, and stress responses. Among these, unmanned aerial vehicles (UAVs, or drones) are especially attractive due to their flexibility, affordability, and ability to generate repeated observations at plot or field scale. UAV-mounted sensors—ranging from RGB cameras to multispectral, thermal, and LIDAR (Laser Imaging, Detection And Ranging) units—enable detailed measurement of vegetation indices, canopy temperature and topography that can inform breeding programs and management decisions \cite{machwitz2021bridging}.
+\DIFaddbegin \DIFadd{FILIPPO }\DIFaddend Advances in precision agriculture and plant phenotyping increasingly rely on high-throughput, non-destructive methods for measuring crop performance under field conditions. Remote sensing platforms have become central to this effort, providing quantitative information on canopy structure, physiology, and stress responses. Among these, unmanned aerial vehicles (UAVs, or drones) are especially attractive due to their flexibility, affordability, and ability to generate repeated observations at plot or field scale. UAV-mounted sensors—ranging from RGB cameras to multispectral, thermal, and LIDAR (Laser Imaging, Detection And Ranging) units—enable detailed measurement of vegetation indices, canopy temperature and topography that can inform breeding programs and management decisions \cite{machwitz2021bridging}.
 
 Although the potential of UAV imagery for plant science is well recognized, the software ecosystem supporting its analysis remains fragmented. Many researchers rely on commercial photogrammetry suites for orthomosaic production, followed by manual processing in GIS software or custom scripts for index calculation and region-of-interest (ROI) extraction. This workflow can be labor-intensive, error-prone, and difficult to reproduce across experiments or research groups. Existing open-source solutions are usually not designed for agriculture applications (\cite{moyroud2018introduction}), have sometimes very specific targets (e.g. seeds \cite{tang2024grabseeds}, berries \cite{loarca2024berryportraits}), focus on single data types (e.g. RGB or multispectral), provide limited support for multi-modal datasets, or lack transparent configuration and automation mechanisms. 
 
@@ -354,17 +352,15 @@ Together with the orthomosaic image (typically in the .tif format), a digital el
 
 In a typical agricultural application, several flights are performed over the same field during a growing season. In fact, the flights may start on the empty field just after sowing, so that the first orthophoto and DEM file represent the baseline for all successive flights. On this empty field, a ''shape file`` is traced, containing the shapes and placements of all regions of interest (ROIs). Typically, each plot becomes a ROI, with the edge case of the entire field comprised of a single ROI. Defining ROIs is essential, because the area scanned by the drone is always larger than the actual target field surface and typically covers borders, utility roads and other external elements.
 
-Orthophotos are typically multichannel images, with common cases being three channels (visible RGB spectrum), while multispectral images may include additional bands, such as near-infrared (NIR). Thermal data is encoded as a single channel and possibly rendered as grayscale images, with each pixel corresponding to a single temperature read. Even elevation models (DEM files) can at this stage be considered as a valid data input: a single channel image where each pixel corresponds to a measured height. \DIFaddbegin \DIFadd{The number of channels is typically maintained when orthophotos are then combined in orthomosaics.
-}\DIFaddend 
+Orthophotos are typically multichannel images, with common cases being three channels (visible RGB spectrum), while multispectral images may include additional bands, such as near-infrared (NIR). Thermal data is encoded as a single channel and possibly rendered as grayscale images, with each pixel corresponding to a single temperature read. Even elevation models (DEM files) can at this stage be considered as a valid data input: a single channel image where each pixel corresponds to a measured height. The number of channels is typically maintained when orthophotos are then combined in orthomosaics.
 
-\textsc{drone2report} can receive as input one or more \DIFdelbegin \DIFdel{orthophotos}\DIFdelend \DIFaddbegin \DIFadd{orthomosaics}\DIFaddend . If more than one image is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via \DIFaddbegin \DIFadd{cubic }\DIFaddend interpolation and taking into account possible differences in georeferencing data. This results in the creation of a single tensor-like data structure with a single shape (width and length) and as many channels as the sum of all input images channels. This unified representation enables to perform algebraic operations on all combined channels simultaneously, and even combine data coming from different flights and sensors. Even when multiple \DIFdelbegin \DIFdel{orthophotos }\DIFdelend \DIFaddbegin \DIFadd{orthomosaics }\DIFaddend are combined into a \textit{dataset} the ROIs are specified only once.
+\textsc{drone2report} can receive as input one or more orthomosaics. If more than one image is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via cubic interpolation and taking into account possible differences in georeferencing data. This results in the creation of a single tensor-like data structure with a single shape (width and length) and as many channels as the sum of all input images channels. This unified representation enables to perform algebraic operations on all combined channels simultaneously, and even combine data coming from different flights and sensors. Even when multiple orthomosaics are combined into a \textit{dataset} the ROIs are specified only once.
 
-One \textit{dataset} can thus be composed of several \DIFdelbegin \DIFdel{orthophotos}\DIFdelend \DIFaddbegin \DIFadd{orthomosaics}\DIFaddend , and several \textit{dataset}s can be loaded. \textsc{drone2report} then proceeds to feed all the data to a queue of tasks. As of the current implementation, a number of tasks is implemented for computing various vegetation indices, rescaling and extracting subimages, and preparing data for successive elaboration (\textit{e. g.} training neural networks). 
+One \textit{dataset} can thus be composed of several orthomosaics, and several \textit{dataset}s can be loaded. \textsc{drone2report} then proceeds to feed all the data to a queue of tasks. As of the current implementation, a number of tasks is implemented for computing various vegetation indices, rescaling and extracting subimages, and preparing data for successive elaboration (\textit{e. g.} training neural networks). 
 
-\DIFaddbegin \DIFadd{After all tasks have run, }\textsc{\DIFadd{drone2report}} \DIFadd{will run the rendering queue. "Render" items are similar to task but are designed to collect results of other analyses and produce summary and synthetic information. One of the render task is called "report" and is configured to collect all the produced log files, together with 
-}
+After all tasks have run, \textsc{drone2report} will run the rendering queue. "Render" items are similar to task but are designed to collect results of other analyses and produce summary and synthetic information. One of the render task is called "report" and is configured to collect all the produced log files, together with 
 
-\DIFaddend \subsection{Software Implementation}
+\subsection{Software Implementation}
 
 \textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed for agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
 
@@ -388,16 +384,14 @@ The \textsc{drone2report} open-source code is available on-line at the following
 \begin{minipage}{\hsize}%
 \lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=bash}% Set your language (you can change the language for each code-block optionally)
 %%% Start your code-block
-\DIFmodbegin
 \begin{lstlisting}[caption={Example of configuration file to run \textsc{drone2report}.
 This takes the form of a standard .ini file, divided in sections (between
-square brackets) and supporting comments (using the hash symbol}, label={lst:config},alsolanguage=DIFcode]
+square brackets) and supporting comments (using the hash symbol}, label={lst:config}]
 [DEFAULT]
 #these parameters are shared by all sections
 infolder=</base/folder>
-%DIF < outfolder=</output/folder>
-%DIF > outfolder=</folder/for_analysis_results>
-%DIF > logfolder=</folder/for_log_files>
+outfolder=</folder/for_analysis_results>
+logfolder=</folder/for_log_files>
 cores=4
 skip_if_already_done=False
 verbose=True
@@ -423,18 +417,17 @@ shapes_index=id
 active=True
 outfolder=${DEFAULT:outfolder}/<results>
 indices=GLI,HUE
-%DIF > 
-%DIF > [RENDER report]
-%DIF > #this section details the output html report
-%DIF > active=True
-%DIF > report_file=${DEFAULT:outfolder}/d2r.html
-%DIF > title=Drone2Report analysis
-%DIF > author=Your name
-%DIF > #all .csv files in this folder, if generated by
-%DIF > #index task, will be loaded and plotted
-%DIF > index_folder=${DEFAULT:outfolder}/<results>
+
+[RENDER report]
+#this section details the output html report
+active=True
+report_file=${DEFAULT:outfolder}/d2r.html
+title=Drone2Report analysis
+author=Your name
+#all .csv files in this folder, if generated by
+#index task, will be loaded and plotted
+index_folder=${DEFAULT:outfolder}/<results>
 \end{lstlisting}
-\DIFmodend
 %\caption{Box: example of configuration .ini file to run drone2report}
 %\label{box:config}
 \end{minipage}
@@ -656,13 +649,12 @@ Figure~\ref{fig:classification_resnet} shows that the training saturates after 1
 
 Once training was complete, the trained network object (comprising both the model architecture and the optimized weights) was retained. To enable \textsc{drone2report} to leverage the trained network, a custom [TASK] script was implemented to (1) load the trained model, (2) preprocess the raster region-of-interest (ROI) data to match the network input requirements, (3) execute the network in inference mode, and (4) collect the prediction results into an output file. The custom task comprises approximately eighty lines of code, including inline comments and informational messages to guide the user through the execution steps. The network was run on the test set (forty images, ten per class, not involved during the network training), on which it achieved perfect classification accuracy. This simulates a real world application where an externally trained model is applied on incoming data to guide management decisions.
 
-\DIFaddbegin \subsection{\DIFadd{Rendering and reporting}}
+\subsection{Rendering and reporting}
 \label{rendering}
 
-\DIFadd{After all }[\DIFadd{TASK}]\DIFadd{s are executed, }\textsc{\DIFadd{drone2report}} \DIFadd{executes all the active }[\DIFadd{RENDER}] \DIFadd{sections. At the time of writing, two types of render are implemented. The first one is a small utility function to collect and collate all tables produced by index computation into a single .csv file. This is useful if several runs with different configurations has been executed, so to have a single collection point. The second render functionality outputs an .html report with all the produced logs and, optionally, the computed indices plotted in a scatter plot using the ROI centroids for coordinates and the computed index for color intensity. An example of such report is available as Supplementary File 1.
-}
+After all [TASK]s are executed, \textsc{drone2report} executes all the active [RENDER] sections. At the time of writing, two types of render are implemented. The first one is a small utility function to collect and collate all tables produced by index computation into a single .csv file. This is useful if several runs with different configurations has been executed, so to have a single collection point. The second render functionality outputs an .html report with all the produced logs and, optionally, the computed indices plotted in a scatter plot using the ROI centroids for coordinates and the computed index for color intensity. An example of such report is available as Supplementary File 1.
 
-\DIFaddend \section{Discussion}
+\section{Discussion}
 \label{discussion}
 In this section, we first compare \textsc{drone2report} to the state-of-the-art software tools for drone-images processing in agriculture. Then we discuss the range of applications of \textsc{drone2report}, its strengths and limitations, and the future directions for further developments.
 
@@ -671,8 +663,8 @@ UAV imagery has become central to high-throughput field phenotyping, with numero
 These studies consistently highlight persistent bottlenecks not in image acquisition, but in the standardization and analysis of downstream workflows~\cite{gano_dronebased_2024}.
 
 Several tools and software packages are available for processing and analysing UAV-acquired image data, including commercial products~\cite{sharma2021development}. 
-In this section, we briefly survey the most common open-source and/or freeware tools that are currently available for photogrammetric data processing, and describe where \textsc{drone2report} stands in this landscape. \DIFaddbegin \DIFadd{We provide a summary table as Supplementary Table 1.
-}\DIFaddend The majority of open-source/freeware software packages for UAV-imagery processing is written in \texttt{Python} and based on libraries for image manipulation like \texttt{scikit-image}, \texttt{PIL/Pillow}, \texttt{GDAL}, \texttt{geopandas}.
+In this section, we briefly survey the most common open-source and/or freeware tools that are currently available for photogrammetric data processing, and describe where \textsc{drone2report} stands in this landscape. We provide a summary table as Supplementary Table 1.
+The majority of open-source/freeware software packages for UAV-imagery processing is written in \texttt{Python} and based on libraries for image manipulation like \texttt{scikit-image}, \texttt{PIL/Pillow}, \texttt{GDAL}, \texttt{geopandas}.
 
 \textit{OpenDroneMap} (ODM/WebODM: \url{https://github.com/OpenDroneMap/WebODM}, \cite{vacca2020web}) is a mature, subscription-based software stack that excels at turning raw images into geospatial products —orthomosaics, point clouds, 3D meshes and DEMs— and even provides “plant health” visualizations (e.g., NDVI/VARI) within the viewer. However, its focus is reconstruction; downstream plot-level analytics, multi-sensor alignment, and standardized per-ROI statistics/reporting fall largely outside its scope.
 
@@ -735,13 +727,10 @@ First of all, there is no graphical interface (GUI), which may pose a barrier fo
 
 %\backmatter
 
-\DIFdelbegin %DIFDELCMD < \supplementary{ }
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \supplementary{
+\supplementary{
 \textbf{Supplementary Table 1}: summary of the main freely available software packages for the processing of image data in agriculture.
 \textbf{Supplementary File 1}: example of .html report. Note that, by design, the value of the two computed indices (GLI and HUE) are valid on the RGB image and invalid on the thermal one (which doesn't have the necessary channels). This is done to show what happens when invalid indices are requested.
 }
-\DIFaddend 
 
 \authorcontributions{NN implemented the core functionalities of the software.
 NN, GM, FB implemented the case studies.
