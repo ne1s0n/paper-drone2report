@@ -1,7 +1,7 @@
 %Version 3 December 2023
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ../drones-4134001-done-x_version2/drones-4134001-done.tex   Tue Mar 24 12:22:30 2026
-%DIF ADD drones-4134001-done.tex                                     Tue Mar 24 17:52:09 2026
+%DIF DEL ../drones-4134001-done-x_version2/drones-4134001-done.tex   Thu Mar 19 11:09:53 2026
+%DIF ADD drones-4134001-done.tex                                     Fri Mar 27 13:54:34 2026
 % See section 11 of the User Manual for version history
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,8 +127,10 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-%DIF 127c127
+%DIF 127-129c127
 %DIF < \Title{\textsc{drone2report}: A Configuration-Driven Multi-Sensor Pipeline for UAV-Based Crop Phenotyping and Precision Agriculture}
+%DIF < 
+%DIF < 
 %DIF -------
 \Title{\textsc{drone2report}: A Configuration-Driven Multi-Sensor batch processing engine for UAV-Based plot analysis in Precision Agriculture} %DIF > 
 %DIF -------
@@ -214,20 +216,20 @@ $^{5}$ \quad Research \& Development, SIS - Società Italiana Sementi, {Via Mira
 %% Sample for unstructured abstract %%
 %%==================================%%
 
-%DIF 210c210
+%DIF 212c210
 %DIF < \abstract{Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthophotos into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups.
 %DIF -------
 \abstract{Unmanned aerial vehicles (UAVs) have become indispensable tools in precision agriculture and plant phenotyping, enabling rapid, non-destructive assessment of crop traits across space and time. Equipped with RGB, multispectral, thermal, and other sensors, UAVs provide detailed information on canopy structure, physiology, and stress responses that can guide management decisions and accelerate breeding programs. Despite these advances, the downstream processing of UAV imagery remains technically demanding. Converting orthomosaics into standardized, biologically meaningful data often requires a combination of photogrammetry, geospatial analysis, and custom scripting, which can limit reproducibility and accessibility across research groups. %DIF > 
 %DIF -------
 
-%DIF 212c212
+%DIF 214c212
 %DIF < We present \textsc{drone2report}, an open-source python-based software that processes orthophotos/orthomosaics from UAV flights to generate vegetation indices, summary statistics, derived subimages and, text (html) reports, supporting both research and applied breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging or the falling over of spikes; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task.
 %DIF -------
 We present \textsc{drone2report}, an open-source python-based software that processes orthomosaics from UAV flights to generate vegetation indices, summary statistics, derived subimages and, text (html) reports, supporting both research and applied crop breeding contexts. Alongside the basic structure and functioning of \textsc{drone2report}, we present also five case studies that illustrate practical applications common in UAV/drone-phenotyping of plants: i) thresholding to remove background noise and highlight regions of interest; ii) monitoring plant phenotypes over time; iii) extracting information on plant height to detect events like lodging or the falling over of spikes; iv) integrating multiple sensors (cameras) to construct and optimise new synthetic indices; v) integrate a trained deep learning network to implement a classification task. %DIF > 
 %DIF -------
 These examples demonstrate the tool’s ability to automate analysis, integrate heterogeneous data and models, and support reproducible computation of agronomically relevant traits.
 
-%DIF 215c215
+%DIF 217c215
 %DIF < \textsc{drone2report}  streamlines UAV image processing for precision agriculture by linking orthophoto data to standardized, plot-level outputs. Its modular, configuration-driven design allows transparent workflows, easy customization, and integration of multiple sensors within a unified analytical framework. By facilitating reproducible, multi-modal image analysis, \textsc{drone2report} lowers technical barriers to UAV-based phenotyping and opens the way to robust, data-driven crop monitoring and breeding applications.
 %DIF -------
 \textsc{drone2report} streamlines UAV image processing for precision agriculture by linking orthomosaics to standardized, plot-level outputs. Its modular, configuration-driven design allows transparent workflows, easy customization, and integration of multiple sensors within a unified analytical framework. By facilitating reproducible, multi-modal image analysis, \textsc{drone2report} lowers technical barriers to UAV-based phenotyping and opens the way to robust, data-driven crop monitoring and breeding applications. %DIF > 
@@ -312,7 +314,7 @@ These examples demonstrate the tool’s ability to automate analysis, integrate 
 \DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
 \DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
 \DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
 \RequirePackage{listings} %DIF PREAMBLE
 \RequirePackage{color} %DIF PREAMBLE
 \lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
@@ -732,13 +734,13 @@ It is also easily portable, on any OS or platforms where \texttt{Python} is avai
 Additionally, \textsc{drone2report} offers ample extendibility allowing users to define new indices or analysis tasks, as shown in the section on software implementation. We also showed how signals from multiple sensors (RGB, multispectral, thermal, DEM) can be integrated to develop custom indices, a feature largely unexplored in existing tools.
 
 There are of course a few limitations that need to be pointed out. 
-First of all, there is no graphical interface (GUI), which may pose a barrier for users unfamiliar with command-line tools. This, however, was a design choice, since the tool was developed as part of a larger, server-based pipeline\DIFaddbegin \DIFadd{.
+First of all, there is no graphical interface (GUI), which may pose a barrier for users unfamiliar with command-line tools. This, however, was a design choice, since the tool was developed as part of a larger, server-based pipeline.
+
+\DIFaddbegin \DIFadd{Second, in the current implementation }\textsc{\DIFadd{drone2report}} \DIFadd{does not expose any radiometric calibration capability, which can be very important to compare vegetation indices across different flights.
 }
 
-\DIFadd{Second, in the current implementation }\textsc{\DIFadd{drone2report}} \DIFadd{does not expose any radiometric calibration capability, which can be very important to compare vegetation indices across different flights}\DIFaddend .
 
-
-\section{Conclusions}
+\DIFaddend \section{Conclusions}
 \label{conclusions}
 
 \textsc{drone2report} is a new software tool designed to support repeatable, scalable, and multi-sensor UAV data analysis in agricultural field trials. It is designed to bridge the gap between orthomosaic creation and actual agriculture applications, a gap typically filled with custom, non-sharable software solutions. Moreover, \textsc{drone2report} is designed around reproductibility and modularity, and it's easily expandable to integrate external models. Its design makes it a valuable asset not only for researchers in precision agriculture, but also for broader applications such as forestry, land-use monitoring, and environmental surveys.
@@ -759,8 +761,12 @@ GM, EF, FB, NF, and RP tested the software.
 NN and FB wrote the first draft of the article.
 All authors reviewed and approved the submitted manuscript.}
 
-\funding{Funded by the European Union - Next Generation EU, Mission 4, Component 1, CUP B53D23007940006: PRIN 2022 project "Polyploidbreeding 4.0" (G.A.: 2022BACN8A). 
-Also funded by CREA, "stage di mobilità breve all’estero", register number 0107199, 24 november 2023.}
+\DIFdelbegin %DIFDELCMD < \funding{Funded by the European Union - Next Generation EU, Mission 4, Component 1, CUP B53D23007940006: PRIN 2022 project "Polyploidbreeding 4.0" (G.A.: 2022BACN8A). 
+%DIFDELCMD < Also funded by CREA, "stage di mobilità breve all’estero", register number 0107199, 24 november 2023.}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \funding{Funded by the European Union - Next Generation EU, Mission 4, Component 1, CUP B53D23007940006: PRIN 2022 project "Polyploidbreeding 4.0" (G.A.: 2022BACN8A). 
+Also funded by CREA, "stage di mobilità breve all’estero", register number 0107199, 24 november 2023. Also funded by Research and Development of Plant Genetic Resources for Sustainable Agriculture, Center of Excellence for Biodiversity and Molecular Plant Breeding (CoE CroP-Bio-Div), Zagreb, Croatia (PK.1.1.10.0008).}
+\DIFaddend 
 
 \institutionalreview{Not applicable.}
 
