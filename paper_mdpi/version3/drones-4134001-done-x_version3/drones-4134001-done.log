@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  31 MAR 2026 12:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.2)  31 MAR 2026 13:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1604,7 +1604,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 301--352
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 299--350
 []$[]$ 
  []
 
@@ -1619,7 +1619,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [5] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 353--373
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 351--371
 []$[]$ 
  []
 
@@ -1635,16 +1635,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/tobacco.png, id=218, 932.07043pt x 671.68588pt>
 File: figs/tobacco.png Graphic file (type png)
 <use figs/tobacco.png>
-Package pdftex.def Info: figs/tobacco.png  used on input line 392.
+Package pdftex.def Info: figs/tobacco.png  used on input line 390.
 (pdftex.def)             Requested size: 374.63625pt x 269.97122pt.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 393.
+(Font)              scaled to size 9.37807pt on input line 391.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 393.
+(Font)              scaled to size 7.29405pt on input line 391.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 393.
+(Font)              scaled to size 9.37807pt on input line 391.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 393.
+(Font)              scaled to size 7.29405pt on input line 391.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1658,7 +1658,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/gli_histograms.png, id=248, 1045.65656pt x 347.04657pt>
 File: figs/gli_histograms.png Graphic file (type png)
 <use figs/gli_histograms.png>
-Package pdftex.def Info: figs/gli_histograms.png  used on input line 414.
+Package pdftex.def Info: figs/gli_histograms.png  used on input line 412.
 (pdftex.def)             Requested size: 374.63625pt x 124.33827pt.
 
 
@@ -1673,7 +1673,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/barley-fields.png, id=261, 941.01563pt x 299.61937pt>
 File: figs/barley-fields.png Graphic file (type png)
 <use figs/barley-fields.png>
-Package pdftex.def Info: figs/barley-fields.png  used on input line 424.
+Package pdftex.def Info: figs/barley-fields.png  used on input line 422.
 (pdftex.def)             Requested size: 374.63625pt x 119.28328pt.
 
 
@@ -1697,12 +1697,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/time-curve-rgb.png, id=291, 782.925pt x 664.73344pt>
 File: figs/time-curve-rgb.png Graphic file (type png)
 <use figs/time-curve-rgb.png>
-Package pdftex.def Info: figs/time-curve-rgb.png  used on input line 493.
+Package pdftex.def Info: figs/time-curve-rgb.png  used on input line 491.
 (pdftex.def)             Requested size: 374.63625pt x 318.08456pt.
 <figs/dem-height.png, id=294, 1207.51125pt x 433.62pt>
 File: figs/dem-height.png Graphic file (type png)
 <use figs/dem-height.png>
-Package pdftex.def Info: figs/dem-height.png  used on input line 509.
+Package pdftex.def Info: figs/dem-height.png  used on input line 507.
 (pdftex.def)             Requested size: 374.63625pt x 134.53328pt.
 
 
@@ -1726,7 +1726,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/trajectories.png, id=319, 722.7pt x 433.62pt>
 File: figs/trajectories.png Graphic file (type png)
 <use figs/trajectories.png>
-Package pdftex.def Info: figs/trajectories.png  used on input line 545.
+Package pdftex.def Info: figs/trajectories.png  used on input line 543.
 (pdftex.def)             Requested size: 394.35522pt x 236.61264pt.
 
 
@@ -1741,7 +1741,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figs/cs5_training_joined.png, id=339, 505.89pt x 566.5968pt>
 File: figs/cs5_training_joined.png Graphic file (type png)
 <use figs/cs5_training_joined.png>
-Package pdftex.def Info: figs/cs5_training_joined.png  used on input line 560.
+Package pdftex.def Info: figs/cs5_training_joined.png  used on input line 558.
 (pdftex.def)             Requested size: 315.48538pt x 353.35268pt.
 
 
@@ -1764,7 +1764,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [15 <./figs/cs5_training_joined.png>]
 
 LaTeX Font Warning: Font shape `T1/ppl/m/scit' undefined
-(Font)              using `T1/ppl/m/sc' instead on input line 579.
+(Font)              using `T1/ppl/m/sc' instead on input line 577.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1822,14 +1822,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [21] (./drones-4134001-done.aux)
 Package rerunfilecheck Info: File `drones-4134001-done.out' has not changed.
-(rerunfilecheck)             Checksum: 5E1878779E94ECD2985DC1A3ABB82AA1;3519.
+(rerunfilecheck)             Checksum: 32BE2B5B2070A7BB4F2F238830859D16;3519.
  ) 
 Here is how much of TeX's memory you used:
- 37218 strings out of 480171
- 685900 string characters out of 5894490
- 1226447 words of memory out of 5000000
+ 37233 strings out of 480171
+ 686030 string characters out of 5894490
+ 1226956 words of memory out of 5000000
  53740 multiletter control sequences out of 15000+600000
- 561697 words of font info for 536 fonts, out of 8000000 for 9000
+ 562593 words of font info for 547 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  123i,13n,120p,1228b,1408s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/nelson/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.60
@@ -1843,7 +1843,7 @@ pe1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pal
 atino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on drones-4134001-done.pdf (21 pages, 4159228 bytes).
+Output written on drones-4134001-done.pdf (21 pages, 4159493 bytes).
 PDF statistics:
  585 PDF objects out of 1000 (max. 8388607)
  468 compressed objects within 5 object streams
