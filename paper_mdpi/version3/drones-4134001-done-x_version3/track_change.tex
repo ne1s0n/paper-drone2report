@@ -1,7 +1,7 @@
 %Version 3 December 2023
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ../drones-4134001-done-x_version2/drones-4134001-done.tex   Thu Mar 19 11:09:53 2026
-%DIF ADD drones-4134001-done.tex                                     Fri Mar 27 13:54:34 2026
+%DIF DEL ../drones-4134001-done-x_version2/drones-4134001-done.tex   Tue Mar 31 09:52:09 2026
+%DIF ADD drones-4134001-done.tex                                     Tue Mar 31 10:17:14 2026
 % See section 11 of the User Manual for version history
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,7 +29,11 @@
 %%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
 
 
-%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%DIF 29c29
+%DIF < %%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%DIF -------
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis.  %DIF > 
+%DIF -------
 %%The option is available for: sn-basic.bst, sn-vancouver.bst, sn-chicago.bst%  
  
 %%\documentclass[pdflatex,sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
@@ -314,7 +318,7 @@ These examples demonstrate the tool’s ability to automate analysis, integrate 
 \DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
 \DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
 \DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
 \RequirePackage{listings} %DIF PREAMBLE
 \RequirePackage{color} %DIF PREAMBLE
 \lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
@@ -341,8 +345,7 @@ Advances in precision agriculture and plant phenotyping increasingly rely on hig
 
 Although the potential of UAV imagery for plant science is well recognized, the software ecosystem supporting its analysis remains fragmented. Many researchers rely on commercial photogrammetry suites for orthomosaic production, followed by manual processing in GIS software or custom scripts for index calculation and region-of-interest (ROI) extraction. This workflow can be labor-intensive, error-prone, and difficult to reproduce across experiments or research groups. Existing open-source solutions are usually not designed for agriculture applications (\cite{moyroud2018introduction}), have sometimes very specific targets (e.g. seeds \cite{tang2024grabseeds}, berries \cite{loarca2024berryportraits}), focus on single data types (e.g. RGB or multispectral), provide limited support for multi-modal datasets, or lack transparent configuration and automation mechanisms. 
 
-As UAV datasets grow in size and complexity, there is a growing need for tools that combine reproducibility, flexibility, and ease of use, while remaining accessible to plant researchers without advanced programming expertise.
-\textsc{drone2report} was developed to address this gap. It is designed specifically for agriculture (\textit{e.g.} a field with multiple plots each accommodating one genotype) and implements a configuration-driven \DIFdelbegin \DIFdel{pipeline }\DIFdelend \DIFaddbegin \DIFadd{batch processing engine }\DIFaddend that streamlines the transformation of \DIFdelbegin \DIFdel{UAV imagery }\DIFdelend \DIFaddbegin \DIFadd{orthomosaics }\DIFaddend into standardized outputs—such as vegetation indices, ROI-based statistics, and summary reports—across multiple sensor types. By emphasizing reproducibility, modularity, and compatibility with common research workflows, \textsc{drone2report} aims to lower the barrier to adoption of UAV-based phenotyping and facilitate robust comparisons across experiments, genotypes, and environments. 
+As UAV datasets grow in size and complexity, there is a growing need for tools that combine reproducibility, flexibility, and ease of use, while remaining accessible to plant researchers without advanced programming expertise. \DIFaddbegin \DIFadd{In a typical elaboration pipeline, after photogrammetry comes a wide variety of analyses which are highly application-dependent, and often implemented using ad-hoc solutions. }\DIFaddend \textsc{drone2report} was developed to address this \DIFdelbegin \DIFdel{gap}\DIFdelend \DIFaddbegin \DIFadd{step, providing a tool able to generate standardized and reproducible post-photogrammetry results}\DIFaddend . It is designed specifically for agriculture (\textit{e.g.} a field with multiple plots each accommodating one genotype) and implements a configuration-driven \DIFdelbegin \DIFdel{pipeline }\DIFdelend \DIFaddbegin \DIFadd{batch processing engine }\DIFaddend that streamlines the transformation of \DIFdelbegin \DIFdel{UAV imagery }\DIFdelend \DIFaddbegin \DIFadd{orthomosaics }\DIFaddend into standardized outputs—such as vegetation indices, ROI-based statistics, and summary reports—across multiple sensor types. By emphasizing reproducibility, modularity, and compatibility with common research workflows, \textsc{drone2report} aims to lower the barrier to adoption of UAV-based phenotyping and facilitate robust comparisons across experiments, genotypes, and environments. 
 %The software is released under open-source license and readily available at \url{https://github.com/ne1s0n/drone2report}. 
 In this paper, we present the technical details of this new tool, followed by five case-studies describing examples of its application, a comparison with other available software packages, and a discussion of the merits, limitations and future expansions of \textsc{drone2report}.
 
@@ -369,7 +372,8 @@ In a typical agricultural application, several flights are performed over the sa
 
 Orthophotos are typically multichannel images, with common cases being three channels (visible RGB spectrum), while multispectral images may include additional bands, such as near-infrared (NIR). Thermal data is encoded as a single channel and possibly rendered as grayscale images, with each pixel corresponding to a single temperature read. Even elevation models (DEM files) can at this stage be considered as a valid data input: a single channel image where each pixel corresponds to a measured height. The number of channels is typically maintained when orthophotos are then combined in orthomosaics.
 
-\textsc{drone2report} can receive as input one or more orthomosaics. If more than one image is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via cubic interpolation\DIFdelbegin \DIFdel{and taking into account possible differences in georeferencing data }\DIFdelend \DIFaddbegin \DIFadd{. Differences in spatial reference system (SRS) are handled via
+\textsc{drone2report} \DIFdelbegin \DIFdel{can }\DIFdelend \DIFaddbegin \DIFadd{is designed to }\DIFaddend receive as input one or more orthomosaics. \DIFaddbegin \DIFadd{In the elaboration chain it is thus placed after 
+acquisition, photogrammetry and, if needed, radiometric calibration. }\DIFaddend If more than one \DIFdelbegin \DIFdel{image }\DIFdelend \DIFaddbegin \DIFadd{orthomosaic }\DIFaddend is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via cubic interpolation\DIFdelbegin \DIFdel{and taking into account possible differences in georeferencing data }\DIFdelend \DIFaddbegin \DIFadd{. Differences in spatial reference system (SRS) are handled via
 reprojection of all data into the reference taken from the first input orthomosaic}\DIFaddend .
 This results in the creation of a single tensor-like data structure with a single shape (width and length) and as many channels as the sum of all input images channels. This unified representation enables to perform algebraic operations on all combined channels simultaneously, and even combine data coming from different flights and sensors. Even when multiple orthomosaics are combined into a \textit{dataset} the ROIs are specified only once.
 
