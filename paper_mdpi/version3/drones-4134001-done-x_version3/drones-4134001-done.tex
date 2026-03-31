@@ -572,9 +572,9 @@ After all [TASK]s are executed, \textsc{drone2report} executes all the active [R
 
 \section{Discussion}
 \label{discussion}
-In this section, we first compare \textsc{drone2report} to the state-of-the-art software tools for drone-images processing in agriculture. Then we discuss the range of applications of \textsc{drone2report}, its strengths and limitations, and the future directions for further developments.
+In this section, we first compare \textsc{drone2report} to the state-of-the-art free software tools for drone-image processing in agriculture. Then we discuss the range of applications of \textsc{drone2report}, its strengths and limitations, and the future directions for further developments.
 
-\subsection{State-of-the-Art free software solutions, and Positioning of \textsc{drone2report}}
+\subsection{State-of-the-Art free software solutions, and positioning of \textsc{drone2report}}
 UAV imagery has become central to high-throughput field phenotyping, with numerous reviews documenting rapid adoption across RGB, multispectral and thermal sensing for crop trait estimation and stress monitoring \cite{tanaka_review_2024, gano2024drone}. 
 These studies consistently highlight persistent bottlenecks not in image acquisition, but in the standardization and analysis of downstream workflows~\cite{gano_dronebased_2024}.
 
@@ -609,7 +609,7 @@ As other highly specialised tools, \textit{Berryportraits} only works with RGB i
 
 \bigskip
 
-\textsc{drone2report} has been developed specifically to streamline the processing of orthorectified UAV-captured images for the calculation of vegetation indices and the reporting of relevant summary statistics. The tool is designed to run after image acquisition, photogrammetry and, if needed, calibration. It is designed to sit after the orthomosaic generation (e.g. from ODM/WebODM or commercial tools) and provides a configuration-driven, reproducible pipeline that takes in input one or more multiband images (being these RGB, multispectral, thermal images and DEM files). 
+\textsc{drone2report} has been developed specifically to streamline the processing of orthorectified UAV-captured images for the calculation of vegetation indices and the reporting of relevant summary statistics. The tool is designed to run after image acquisition, photogrammetry and, if needed, calibration. It is designed to sit after the orthomosaic generation (e.g. from ODM/WebODM or commercial tools) and provides a configuration-driven, reproducible workflow that takes in input one or more multiband images (being these RGB, multispectral, thermal images and DEM files). 
 Its core functionalities include: i) identifying regions of interests (ROIs, based on the shape file); ii) calculating vegetation indices; iii) thresholding; iv) summarising statistics; v) generating thumbnails.
 %Moreover, the software is open source and freely (and easily) customizable.
 
