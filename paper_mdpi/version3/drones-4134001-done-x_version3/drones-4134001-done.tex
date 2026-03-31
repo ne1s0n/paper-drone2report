@@ -269,7 +269,7 @@ In a typical agricultural application, several flights are performed over the sa
 Orthophotos are typically multichannel images, with common cases being three channels (visible RGB spectrum), while multispectral images may include additional bands, such as near-infrared (NIR). Thermal data is encoded as a single channel and possibly rendered as grayscale images, with each pixel corresponding to a single temperature read. Even elevation models (DEM files) can at this stage be considered as a valid data input: a single channel image where each pixel corresponds to a measured height. The number of channels is typically maintained when orthophotos are then combined in orthomosaics.
 
 \textsc{drone2report} is designed to receive as input one or more orthomosaics. In the elaboration chain it is thus placed after 
-acquisition, photogrammetry and, if needed, radiometric calibration. If more than one orthomosaic is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channels RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via cubic interpolation. Differences in spatial reference system (SRS) are handled via
+acquisition, photogrammetry and, if needed, radiometric calibration. If more than one orthomosaic is provided, they will be internally stacked into a new multichannel image called \textit{dataset}. For example, providing an RGB image plus a thermal image will create a four-channel RGBT \textit{dataset}. Differences in image sizes and resolutions are solved via cubic interpolation. Differences in spatial reference system (SRS) are handled via
 reprojection of all data into the reference taken from the first input orthomosaic.
 This results in the creation of a single tensor-like data structure with a single shape (width and length) and as many channels as the sum of all input images channels. This unified representation enables to perform algebraic operations on all combined channels simultaneously, and even combine data coming from different flights and sensors. Even when multiple orthomosaics are combined into a \textit{dataset} the ROIs are specified only once.
 
@@ -279,31 +279,29 @@ After all tasks have run, \textsc{drone2report} will run the rendering queue. "R
 
 \subsection{Software Implementation}
 
-\textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed for agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
+\textsc{drone2report} is a Python-based, open source, free software. It is written to be integrated in standard elaboration pipelines aimed for agricultural drone images, both for research and industrial applications. As such, it has no GUI and runs, ideally server-side, on data files and configuration (.ini) files. It has an extensive logging functionality and can be used out of the box without any Python coding. However, it is designed with modularity in mind, allowing for straightforward extension through the addition of new tasks.
 
 An example configuration (.ini) file is provided in Listing~\ref{lst:config}, demonstrating how to compute two vegetation indices from a single RGB image.
 The basic structure of the configuration file includes three main sections: i) DEFAULT specifies base parameters like the input and output folders, the number of cores (processing units) to be used, and whether a verbose output log is desired; ii) DATA specifies the image file name (with some metadata, i.e. date, description etc.), its type (only tif\_multichannel is currently supported), the value that indicates missing pixel data (e.g. $-1$), the channels (total and visible), the maximum pixel intensity value, the path to the shape file; iii) TASK specifies which vegetation indices will be computed. 
 More details on how to use \textsc{drone2report} can be found in the on-line documentation (\url{https://drone2report.readthedocs.io/en/latest/}).
 Once the configuration file is ready, \textsc{drone2report} will be run from the shell command line.
 
-The modularity of \textsc{drone2report} can be leveraged at several levels. The easiest customization would be to add new specialized vegetation indices to the proper python file (e.g. \verb|matrix_returning_indices.py| file in the folder \verb|/drone2report/d2r/tasks/| from the github repository). Listing~\ref{lst:GLI_function} reports an example of such a function.
+The modularity of \textsc{drone2report} can be leveraged at several levels. The easiest customization would be to add new specialized vegetation indices to the proper Python file (e.g. \verb|matrix_returning_indices.py| file in the folder \verb|/drone2report/d2r/tasks/| from the github repository). Listing~\ref{lst:GLI_function} reports an example of such a function.
 
-A more powerful intervention consists of designing a new TASK, which will then require its own section in the .ini file. For that purpose, a TASK template is provided in the documentation of the tool. Finally, new types of DATA could be supported, which would require some care to curate the exposed functionalities.
-
-New indices and functionality can be proposed and eventually integrated in the main software codebase via Github pull requests.
+A more powerful intervention consists of designing a new TASK, which will then require its own section in the .ini file. For that purpose, a TASK template is provided in the documentation of the tool. Finally, new types of DATA could be supported, for which some care would be required so as to curate the exposed functionalities.
+New indices and functionalities can be proposed and eventually integrated in the main software codebase via Github pull requests.
 
 Note that \textsc{drone2report} anticipates the most common needs of agricultural experiments. For example, when a vegetation index is computed, the software already summarizes it through a series of descriptive statistics, which are collated and saved in tabular format.
 
 Internally, \textsc{drone2report} uses the GDAL \cite{GDALmanual} and geopandas \cite{kelsey_jordahl_2020_3946761} libraries for manipulation of georeferenced images. \textsc{drone2report} is released with a custom Conda environment for multi-platform installation.
-
-The \textsc{drone2report} open-source code is available on-line at the following Github repository: \url{https://github.com/ne1s0n/drone2report}.
+The \textsc{drone2report} open-source code is available on-line in the following Github repository: \url{https://github.com/ne1s0n/drone2report}.
 
 \begin{minipage}{\hsize}%
 \lstset{frame=single,framexleftmargin=-1pt,framexrightmargin=-17pt,framesep=12pt,linewidth=0.98\textwidth,language=bash}% Set your language (you can change the language for each code-block optionally)
 %%% Start your code-block
 \begin{lstlisting}[caption={Example of configuration file to run \textsc{drone2report}.
 This takes the form of a standard .ini file, divided in sections (between
-square brackets) and supporting comments (using the hash symbol}, label={lst:config}]
+square brackets) and supporting comments (using the hash symbol)}, label={lst:config}]
 [DEFAULT]
 #these parameters are shared by all sections
 infolder=</base/folder>
